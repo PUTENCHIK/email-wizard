@@ -8,7 +8,7 @@ from database import database
 from blueprints.auth import auth as auth_blueprint
 from blueprints.main import main as main_blueprint
 
-db_name = "email_redactor"
+db_name = "email_wizard"
 db_user = "admin"
 
 app = Flask(__name__)
