@@ -1,0 +1,511 @@
+* {
+    box-sizing: border-box;
+}
+
+p {
+    margin: 0;
+}
+
+span {
+    margin: 0;
+}
+
+main {
+    width: 100%;
+    /* justify-content: space-around; */
+    background-image: url("./img/MainBackground.png");
+    background-size: cover;
+    padding-top: 43px;
+    /* width: 1400px; */
+    /* margin: 0 auto; */
+    display: flex;
+    justify-content: flex-end
+}
+
+.settings {
+    width: 20%;
+    height: 80%;
+    background-color: #ffffff;
+    border-radius: 10px;
+    border: 2px solid #F14925;
+    position: fixed;
+    margin-right: 25px;
+    
+}
+
+.templatesBlock {
+    width: 20%;
+    height: 700px;
+    /* background-color: #ffffff; */
+    border-radius: 10px;
+    padding-top: 20px;
+    position: fixed;
+    /* border: 2px solid #396462; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.templates {
+    width: 90%;
+    display: flex;
+    margin: 0 auto;
+    flex-direction: column;
+}
+
+.templateImg {
+    margin-bottom: 24px;
+}
+
+.updateTextInput {
+
+    width: 90%;
+    height: 70px;
+    border-radius: 3px;
+    border: 2px solid black;
+    font-weight: 600;
+    margin-bottom: 24px;
+}
+
+.updateTextLabel {
+    font-size: 18px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.appear {
+    display: block;
+}
+
+.updateTextColor, .updateBackgroundColor, .updateTextColor {
+    height: 37px;
+    width: 37px;
+    border: 0px solid black;
+    padding: 0px;
+    margin-right: 8px;
+}
+
+.updateTextColorBlock, .updateBackgroundColorBlock {
+    display: flex;
+    flex-direction: column;
+    padding-left: 18px;
+    border-bottom: 2px solid #DFD8D8;
+}
+
+.updateImageColorBlock {
+    padding-left: 18px;
+    border-bottom: 2px solid #DFD8D8;
+}
+
+.updateTextColorTag, .updateBackgroundColorTag, .updateImageColorTag {
+    border: none;
+    width: 75px;
+    border-radius: 5px;
+    background-color: #E4E4E4;
+    padding-left: 5px;
+    color: #5d5d5d;
+    font-family: Inter;
+    font-weight: 600;
+    margin-right: 10px;
+}
+
+header {
+    height: 88px;
+    background-color: #034240;
+}
+
+.workboard {
+    background-color: #ffffff;
+    width: 50%;
+    padding-top: 50px;
+    border-radius: 10px;
+    padding-bottom: 50px;
+    margin: 0 auto;
+    border: 2px solid #396462;
+}
+
+.updateTextOpacityInput, .updateImageOpacityInput {
+    width: 40px;
+    border: none;
+    font-family: Inter;
+    font-weight: 600;
+    color: #000000;
+}
+
+/*.updateImageWidthInput, .updateImageHeightInput {
+    width: 40px;
+    border: none;
+    border-radius: 5px;
+    font-family: Inter;
+    font-weight: 600;
+    color: #000000;
+    background-color: #D9D9D9;
+}*/
+
+.mainInputText {
+    border: 2px solid black;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.addTemplate {
+    width: 105px;
+    height: 38px;
+    border-radius: 25px;
+    background-color: #04504D;
+    color: white;
+    font-size: 18px;
+    font-family: Inter;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+.typesTemplates {
+    width: 118px;
+    height: 364px;
+    border: 3px solid #04504D;
+    border-radius: 30px;
+}
+
+.headerTypeTemplateImg {
+    width: 74px;
+    height: 66px;
+
+}
+
+.typeTemplateBlock {
+    height: 91px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}   
+
+.headerTypeTemplateBlock, .mainTypeTemplateBlock, .footerTypeTemplateBlock {
+    border-bottom: 2px solid #07706d;
+}
+
+.headerTypeTemplateBlock {
+    border-radius: 28px 28px 0px 0px;
+    height: 87px;
+}
+
+.layoutTypeTemplateBlock {
+    background-color: #E85A4F;
+    border-radius: 0px 0px 28px 28px;
+    height: 91px;
+}
+
+.layouts {
+    font-size: 20px;
+    color: white;
+    font-family: Inter;
+    font-weight: 600;
+}
+
+.mainTypeTemplateBlock:hover, .footerTypeTemplateBlock:hover, .headerTypeTemplateBlock:hover {
+    background-color: #808B96;
+}
+
+.layoutTypeTemplateBlock:hover {
+    background-color: #cc352a;
+}
+
+.changeImage {
+    display: flex;
+    padding-top: 18px;
+    padding-left: 18px;
+    border-bottom: 2px solid #DFD8D8;
+    align-items: center;
+    padding-bottom: 13px;
+}
+
+.changeImageOpacity {
+    display: flex;
+    padding-top: 10px;
+    padding-left: 18px;
+    border-bottom: 2px solid #DFD8D8;
+    flex-direction: column;
+    padding-bottom: 13px;
+}
+
+.updateTextAlignBlock {
+    padding-left: 18px;
+    border-bottom: 2px solid #DFD8D8;
+}
+
+.displayImageBlock, .settingsImageOpacityBlock {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    z-index: 5;
+    display: flex;
+}
+
+.updateImageInput {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 3;
+    opacity: 0;
+}
+
+.displayImage {
+    width: 100%;
+    height: 100%;
+    border: 1px solid black;
+}
+
+.displayImageOpacity {
+    width: 100%;
+    height: 100%;
+    border: 1px solid black;
+}
+
+.displayImageText {
+    margin-left: 10px;
+    color: #000000;
+    font-family: Inter;
+    font-weight: 600;
+}
+
+.dissable {
+    display: none;
+}
+
+.updatetitleBlock {
+    width: 100%;
+    height: 49px;
+    background-color: #F14925;
+    border-radius: 9px 9px 0px 0px;
+    display: flex;
+    align-items: center;
+
+}
+
+.updateTitle {
+    font-family: Inter;
+    color: white;
+    margin-left: 18px;
+}
+
+.fontSizeBlock, .lineHeightBlock, .letterSpacingBlock {
+    display: flex;
+}
+
+.updateTextFonts, .updatetextAlignmentBlock {
+    border-bottom: 2px solid #DFD8D8;
+    padding-left: 18px;
+}
+
+.updateImageAlignmentBlock, .updateImageSize {
+    border-bottom: 2px solid #DFD8D8;
+    padding-left: 18px;
+    padding-bottom: 13px;
+}
+
+.updateTextFontsTitle, .updateTextColorTitle, .updatetextAlignmentTitle, .updateImageColorTitle, .updateImageAlignmentTitle, .updateImageSizeTitle {
+    font-size: 16px;
+    margin-top: 17px;
+    margin-bottom: 17px;
+    font-family: Inter;
+    font-weight: 600;
+}
+
+.fontSizeTitle, .fontFamilyTitle, .fontWeightTitle, .lineHeightTitle, .letterSpacingTitle, .updateImagePaddingRightLabel, .updateImagePaddingLeftLabel, .settingsImageSizeBlock{
+    color: #A0A0A0;
+    font-family: Inter;
+    font-weight: 600;
+    margin-right: 12px;
+}
+
+.fontSizeTitle {
+    margin-right: 12px;
+}
+
+.fontWeightTitle, .textAlignmentTitle {
+    margin-right: 10.5px;
+}
+
+.fontSizeInput, .lineHeightInput, .letterSpacingInput {
+    border: none;
+    background-color: #D9D9D9;
+    border-radius: 7px;
+    color: #5d5d5d;
+    font-family: Inter;
+    font-weight: 600;
+    /*padding-left: 10px;*/
+    text-align: center;
+    width: 52px;
+    margin-right: 5px;
+}
+
+.updateImageWidthInput, .updateImageHeightInput {
+    border: none;
+    background-color: #D9D9D9;
+    border-radius: 7px;
+    color: #5d5d5d;
+    font-family: Inter;
+    font-weight: 600;
+    text-align: center;
+    width: 52px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+.fontFamilyInput {
+    border: none;
+    background-color: #D9D9D9;
+    border-radius: 7px;
+    color: #5d5d5d;
+    font-family: Inter;
+    font-weight: 600;
+    padding-left: 10px;
+    width: 100px;
+    margin-right: 5px;
+}
+
+.fontWeights {
+    border: none;
+    background-color: #D9D9D9;
+    border-radius: 7px;
+    color: #5d5d5d;
+    /* font-family: Inter; */
+    /* font-weight: 600; */
+    width: 97px;
+    margin-right: 5px;
+    display: flex;
+}
+
+.alignments, .imageAligntments {
+    border: none;
+    background-color: #D9D9D9;
+    border-radius: 7px;
+    color: #5d5d5d;
+    /* font-family: Inter; */
+    /* font-weight: 600; */
+    width: 97px;
+    margin-right: 5px;
+    margin-bottom: 15px;
+    display: flex;
+}
+
+.fontSizePx {
+    color: #5d5d5d;
+    font-family: Inter;
+    font-weight: 600;
+}
+
+.fontSizeBlock, .fontFamilyBlock, .fontWeightBlock, .lineHeightBlock, .letterSpacingBlock {
+    margin-bottom: 12px;
+}
+
+.fontWeightBlock, .textAlignmentBlock {
+    display: flex;
+}
+
+.updateFillBlock {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.settingsImageOpacityBlock {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.displayImageOpacity {
+    margin-right: 10px;
+}
+
+.fontFamilyInput {
+    width: 150px;
+}
+
+#fontWeightBold, #fontWeightItalic, #fontWeightLined {
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 10;
+}
+
+.fontWeightBoldBlock, .textAlignmentLeftBlock, .imageAlignmentLeftBlock {
+    position: relative;
+    width: 31px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 2px #838080 solid;
+    border-radius: 7px 0px 0px 7px;
+    padding: 2px;
+}
+
+.fontWeightBoldBlock:hover, .fontWeightItalicBlock:hover, .fontWeightLinedBlock:hover {
+    background-color: #adadad;
+}  
+
+.textAlignmentLeftBlock:hover, .textAlignmentCenterBlock:hover, .textAlignmentRightBlock:hover {
+    background-color: #adadad;
+}  
+
+.imageAlignmentLeftBlock:hover, .imageAlignmentCenterBlock:hover, .imageAlignmentRightBlock:hover {
+    background-color: #adadad;
+}  
+
+.fontWeightBoldSpan, .textAlignmentLeftSpan {
+    position: relative;
+    z-index: 1;
+}
+
+.fontWeightItalicBlock, .textAlignmentCenterBlock, .imageAlignmentCenterBlock {
+    position: relative;
+    width: 31px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 2px #838080 solid;
+    padding: 2px;
+}
+
+.fontWeightLinedBlock, .textAlignmentRightBlock, .imageAlignmentRightBlock {
+    position: relative;
+    width: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0px 7px 7px 0px;
+    padding: 2px;
+}
+
+/*.settingsImageSizeBlock {
+    /*display: flex;
+    flex-direction: column;
+    align-items: flex-start;*/
+
+*/
+
+input[type="radio"] {
+    display: none;
+    visibility: hidden;
+}
+
+/*input[type=radio]:checked {
+    background-color: #adadad;
+}*/
+
+.fontWeightItalicSpan {
+    font-style: italic;
+}
+
+.fontWeightLinedSpan {
+    text-decoration: underline;
+}
+
+.textAlignBlock {
+    display: flex;
+    flex-direction: row;
+}
+
