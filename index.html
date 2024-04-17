@@ -1,0 +1,381 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>EmailWizard</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<style>
+		body {
+			width: 100% !important;
+			-webkit-text-size-adjust: 100%;
+			-ms-text-size-adjust: 100%;
+			margin: 0;
+			padding: 0;
+			line-height: 100%;
+		}
+
+		[style*="Open Sans"] {
+			font-family: 'Open Sans', arial, sans-serif !important;
+		}
+
+		img {
+			outline: none;
+			text-decoration: none;
+			border:none;
+			-ms-interpolation-mode: bicubic;
+			max-width: 100%!important;
+			margin: 0;
+			padding: 0;
+			display: block;
+		}
+    
+		table td {
+			border-collapse: collapse;
+		}
+    
+		table {
+			border-collapse: collapse;
+			mso-table-lspace: 0pt;
+			mso-table-rspace: 0pt;
+		}
+
+		.menu a {
+			text-decoration: none;
+			color: black;
+		}
+
+		.menu td {
+			padding-left: 30px;
+		}
+
+		.logo {
+			width: 150px;
+		}
+
+		.header-td {
+			padding-top: 16px;
+			padding-bottom: 16px;
+		}
+
+		.greetings {
+			padding-top: 40px;
+			padding-bottom: 16px;
+		}
+
+
+		.greetings hr {
+			width: 80px;
+			border-color: #ccad53;
+			border-width: 2px;
+			border-style: solid;
+		}
+
+		.thanks {
+			padding-bottom: 24px;
+		}
+
+		.confirmButton {
+			padding-bottom: 56px;
+		}
+		
+		.footerLogo {
+			width: 110px;
+			padding-top: 16px;
+			padding-bottom: 16px;
+		}
+
+		.logoBlock {
+			height: 75px;
+		}
+
+		.menuBlock {
+			padding-top: 20px;
+			padding-bottom: 20px;
+		}
+	</style>
+</head>
+
+<body style="margin: 0; padding: 0;">
+	<input id="mainInputText" autofocus type="text" class="mainInputText dissable">
+	<header>
+		
+	</header>
+
+	<main>
+		<div>
+			<div class="templatesBlock">
+				<button class="addTemplate" type="button">Add</button>
+				<div class="typesTemplates">
+					<div class="typeTemplateBlock headerTypeTemplateBlock">
+						<img class="headerTypeTemplateImg" src="./img/headerTemplate.png" alt="">
+					</div>
+					<div class="typeTemplateBlock mainTypeTemplateBlock">
+						<img class="headerTypeTemplateImg" src="./img/mainTemplate.png" alt="">
+					</div>
+					<div class="typeTemplateBlock footerTypeTemplateBlock">
+						<img class="headerTypeTemplateImg" src="./img/footerTemplate.png" alt="">
+					</div>
+					<div class="typeTemplateBlock layoutTypeTemplateBlock">
+						<span class="layouts">Layouts</span>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+		
+		<div class="workboard">
+			<div id="letter" class="letter">
+				<div style="font-size:0px;font-color:#ffffff;opacity:0;visibility:hidden;width:0;height:0;display:none;">Тестовое письмо</div>
+				<table cellpadding="0" cellspacing="0" width="100%" bgcolor="#FFFFFF">
+					<tr>
+						<td>
+							<table id="mainTable" class="mainTable table-600" cellpadding="0" cellspacing="0" width="600" align="center">
+								<tr>
+									<td align="center" class="logoBlock" bgcolor="#333333" style="padding-left: 0px; padding-right: 0px;">
+										<img align="center" src="./img/logoFashion.png" width="160px" alt="" style="opacity: 1; width: 160px; height: 46.4px;">
+									</td>
+								</tr>
+								<tr>
+									<td align="center" class="menuBlock" bgcolor="#FFFFFF">
+										<table cellpadding="0" cellspacing="0" width="550" bgcolor="#FFFFFF" align="center">
+											<tr align="center">
+												<td class="menu">
+													<a href="#"><span style="font-size: 20px; font-family: Arial, Helvetica, sans-serif; line-height: 50px; letter-spacing: 0.3px; text-align: center;">Home</span></a>
+												</td>
+												<td class="menu">
+													<a href="#"><span style="font-size: 20px; font-family: Arial, Helvetica, sans-serif; line-height: 50px; letter-spacing: 0.3px; text-align: center;">Women</span></a>
+												</td>
+												<td class="menu">
+													<a href="#"><span style="font-size: 20px; font-family: Arial, Helvetica, sans-serif; line-height: 50px; letter-spacing: 0.3px; text-align: center;">Men</span></a>
+												</td>
+												<td class="menu">
+													<a href="#"><span style="font-size: 20px; font-family: Arial, Helvetica, sans-serif; line-height: 50px; letter-spacing: 0.3px; text-align: center;">Sale</span></a>
+												</td>
+											</tr>
+										</table>
+										
+									</td>
+								</tr>	
+								<tr>
+									<td class="banner-td" style="padding-left: 0px; padding-right: 0px;">
+										<a href="#">
+											<img src="./img/welcome.jpg" alt="banner" style="opacity: 1; width: 600px; height: 320px;"/>
+										</a>
+									</td>
+								</tr>
+								<tr>
+									<td bgcolor="#FFFFFF" align="center" class="greetings">
+										<span style="font-size: 32px; font-family: Arial, Helvetica, sans-serif; line-height: 50px; letter-spacing: 0.3px; text-align: center;">Hi Emeli,</span>
+										<hr />
+									</td>
+								</tr>
+								<tr>
+									<td bgcolor="#FFFFFF" align="center" class="thanks">
+										<p style='line-height: 150%; font-size: 18px; font-family: "Times New Roman", Times, serif; letter-spacing: 0.3px; text-align: center;'>Thanks for registering on our site.<br/>Before we get started, we'll need to verify your email.</p>
+									</td>
+								</tr>
+								<tr>
+									<td bgcolor="#FFFFFF" class="confirmButton">
+										<table class="table-150" bgcolor="#ccad53" cellpadding="0" cellspacing="0" width="200" height="50" align="center">
+											<tr>
+												<td class="confirm" align="center">
+													<span style='color: #ffffff; font-size: 22px; font-family: "Times New Roman", Times, serif; line-height: 50px; letter-spacing: 0.3px; text-align: center;'>Confirm my email</span>
+												</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+								<tr>
+									<td bgcolor="#FFFFFF" align="center">
+										<hr bgcolor="#cccccc" width="525"/>
+									</td>
+								</tr>
+								<tr>
+									<td align="center" bgcolor="#FFFFFF" style="padding-left: 0px; padding-right: 0px;">
+										<img class="footerLogo" src="./img/logo.png" alt="logo" style="opacity: 1; width: 110px; height: 65.33px;"/>
+									</td>
+								</tr>
+								<tr>
+									<td align="center" bgcolor="#FFFFFF" class="why">
+										<p style='color: #666666; font-size: 13px; font-family: "Times New Roman", Times, serif; line-height: 50px; letter-spacing: 0.3px; text-align: center;'>You are receiving this email because you have visited our site or asked us about regular newsletter.</p>
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr> 	 	
+					
+				</table>
+			</div>
+		</div>
+		
+
+		<div id="settings" class="settings">
+			<div class="updatetitleBlock">
+				<span class="updateTitle">Design</span>
+			</div>
+			<div id="updateTextBlock" class="updateTextBlock dissable">
+				<div class="updateTextFonts">
+					<h5 class="updateTextFontsTitle">Text</h5>
+					<div class="fontFamilyBlock">
+						<span class="fontFamilyTitle">Font-family:</span>
+						<select class="fontFamilyInput" name="fontFamilyInput" id="fontFamilyInput">
+							<option value='"Times New Roman", Times, serif'>'Times New Roman', Times, serif</option>
+							<option value="Georgia, serif">Georgia, serif</option>
+							<option value="Arial, Helvetica, sans-serif">Arial, Helvetica, sans-serif</option>
+							<option value='"Arial Black", Gadget, sans-serif'>'Arial Black', Gadget, sans-serif</option>
+							<option value="Verdana, Geneva, sans-serif">Verdana, Geneva, sans-serif</option>
+							<option value='"Trebuchet MS", Helvetica, sans-serif'>'Trebuchet MS', Helvetica, sans-serif</option>
+							<option value="Impact, Charcoal, sans-serif">Impact, Charcoal, sans-serif</option>
+							<option value='"Comic Sans MS", cursive, sans-serif'>'Comic Sans MS', cursive, sans-serif</option>
+							<option value='"Courier New", Courier, monospace'>'Courier New', Courier, monospace</option>
+						</select>
+					</div>
+					<div class="fontWeightBlock">
+						<span class="fontWeightTitle">Font-weight:</span>
+						<div class="fontWeights">
+							<div class="fontWeightBoldBlock">
+								<span class="fontWeightBoldSpan"><b>Ж</b></span>
+								<input type="checkbox" name="fontWeightBold" id="fontWeightBold">
+							</div>
+							<div class="fontWeightItalicBlock">
+								<span class="fontWeightItalicSpan">К</span>
+								<input type="checkbox" name="fontWeightItalic" id="fontWeightItalic">
+							</div>
+							<div class="fontWeightLinedBlock">
+								<span class="fontWeightLinedSpan">Ч</span>
+								<input type="checkbox" name="fontWeightLined" id="fontWeightLined">
+							</div>
+						</div>
+						<!-- <input class="fontWeightInput" type="text" name="fontWeightInput" id="fontWeightInput"> -->
+					</div>
+					<div class="fontSizeBlock">
+						<span class="fontSizeTitle">Font-size:</span>
+						<input class="fontSizeInput" type="text" name="fontSizeInput" id="fontSizeInput">
+					</div>
+					<div class="lineHeightBlock">
+						<span class="lineHeightTitle">Line-height:</span>
+						<input class="lineHeightInput" type="text" name="lineHeightInput" id="lineHeightInput">
+					</div>
+					<div class="letterSpacingBlock">
+						<span class="letterSpacingTitle">Letter-spacing:</span>
+						<input class="letterSpacingInput" type="text" name="letterSpacingInput" id="letterSpacingInput">
+					</div>
+				</div>
+				<div class="updateTextColorBlock">
+					<h5 class="updateTextColorTitle">Fill</h5>
+					<div class="updateFillBlock">
+						<input id="updateTextColor" class="updateTextColor" type="color">
+						<input id="updateTextColorTag" class="updateTextColorTag" type="text" value="#ff0000">
+						<input id="updateTextOpacityInput" class="updateTextOpacityInput" type="text">
+					</div>
+				</div>
+				<div class="updatetextAlignmentBlock">
+					<h5 class="updatetextAlignmentTitle">Text alignment</h5>
+					<div class="alignments">
+						<input type="radio" name="textAlignment" id="textAlignmentLeft" value="left">
+						<label for="textAlignmentLeft" class="textAlignmentLeftBlock">
+						<span class="textAlignmentLeftSpan">L</span>
+						</label>
+						
+						<input type="radio" name="textAlignment" id="textAlignmentCenter" value="center">
+						<label for="textAlignmentCenter" class="textAlignmentCenterBlock">
+						<span class="textAlignmentCenterSpan">C</span>
+						</label>
+						
+						<input type="radio" name="textAlignment" id="textAlignmentRight" value="right">
+						<label for="textAlignmentRight" class="textAlignmentRightBlock">
+						<span class="textAlignmentRightSpan">R</span>
+						</label>
+					</div>
+			   </div>
+			</div>
+			<div id="updateBackgroundColorBlock" class="updateBackgroundColorBlock dissable">
+				<h5 class="updateTextColorTitle">Fill</h5>
+				<div class="updateFillBlock">
+					<input id="updateBackgroundColor" class="updateBackgroundColor" type="color">
+					<input id="updateBackgroundColorTag" class="updateBackgroundColorTag" type="text" value="#ff0000">
+				</div>
+			</div>
+			<div id="updateImageBlock" class="updateImageBlock dissable">
+					<div class="changeImage">
+						<div class="displayImageBlock">
+							<input class="updateImageInput" type="file" id="updateImageInput">
+							<img class="displayImage" id="displayImage" alt="">
+						</div>
+						<span class="displayImageText">Поменять фото</span>
+						<!--<input id="path" class="path" type="text">-->
+					</div>
+					<div class="changeImageOpacity">
+						<h5 class="updateImageColorTitle">Image opacity</h5>
+						<div class="settingsImageOpacityBlock">
+						    <img class="displayImageOpacity" id="displayImageOpacity" alt="">
+							<input id="updateImageOpacityInput" class="updateImageOpacityInput" type="text">
+						</div>
+					</div>
+					<!--<div class="updateImageColorBlock">
+						<h5 class="updateImageColorTitle">Stroke</h5>
+						<div class="settingsImageStrokeBlock">
+							<input id="updateImageColor" class="updateImageColor" type="color">
+							<input id="updateImageColorTag" class="updateImageColorTag" type="text" value="#ff0000">
+							<input id="updateImageOpacityInput" class="updateImageOpacityInput" type="text">
+						</div>
+					</div>-->
+					<div class="updateImageAlignmentBlock">
+						<h5 class="updateImageAlignmentTitle">Image alignment</h5>
+						<!--<div class="imageAligntments">
+							<input type="radio" name="imageAlignment" id="imageAlignmentLeft" value="left">
+							<label for="imageAlignmentLeft" class="imageAlignmentLeftBlock">
+							<span class="imageAlignmentLeftSpan">L</span>
+							</label>
+							
+							<input type="radio" name="imageAlignment" id="imageAlignmentCenter" value="center">
+							<label for="imageAlignmentCenter" class="imageAlignmentCenterBlock">
+							<span class="imageAlignmentCenterSpan">C</span>
+							</label>
+							
+							<input type="radio" name="imageAlignment" id="imageAlignmentRight" value="right">
+							<label for="imageAlignmentRight" class="imageAlignmentRightBlock">
+							<span class="imageAlignmentRightSpan">R</span>
+							</label>
+						</div>-->
+						<label for="updateImagePaddingLeftInput" class="updateImagePaddingLeftLabel">Padding-left</label>
+						<input id="updateImagePaddingLeftInput" class="updateImageWidthInput" type="text">
+						<br>
+						<label for="updateImagePaddingRightInput" class="updateImagePaddingRightLabel">Padding-right</label>
+						<input id="updateImagePaddingRightInput" class="updateImageHeightInput" type="text">
+				   </div>
+				   <div class="updateImageSize">
+					<h5 class="updateImageSizeTitle">Image size</h5>
+					<div class="settingsImageSizeBlock">
+						<label for="updateImageWidthInput" class="updateImagePaddingLeftLabel">Width</label>
+						<input id="updateImageWidthInput" class="updateImageWidthInput" type="text">
+						<br>
+						<label for="updateImageHeightInput" class="updateImagePaddingLeftLabel">Height</label>
+						<input id="updateImageHeightInput" class="updateImageHeightInput" type="text">
+					</div>
+				</div>
+			</div>
+			
+			<!-- <div class="updateTextAlignBlock">
+				<h5 class="updateTextAlignTitle">Text alignment</h5>
+				<div class="textAlignBlock">
+					<div class="textAlignLeftBlock">
+						<img class="" src="img/align-left.png" alt="">
+						<input class="textAlignLeftInput" type="checkbox" id="textAlignLeftInput">
+					</div>
+				</div>
+			</div> -->
+		</div>
+	</main>
+	
+	<!-- <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script> -->
+	<script src="app.js"></script>
+</body>
+
+</html>
+
