@@ -1,0 +1,234 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>EmailWizard</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+	<style>
+		body {
+			width: 100% !important;
+			-webkit-text-size-adjust: 100%;
+			-ms-text-size-adjust: 100%;
+			margin: 0;
+			padding: 0;
+			line-height: 100%;
+		}
+
+		[style*="Open Sans"] {
+			font-family: 'Open Sans', arial, sans-serif !important;
+		}
+
+		img {
+			outline: none;
+			text-decoration: none;
+			border:none;
+			-ms-interpolation-mode: bicubic;
+			max-width: 100%!important;
+			margin: 0;
+			padding: 0;
+			display: block;
+		}
+    
+		table td {
+			border-collapse: collapse;
+		}
+    
+		table {
+			border-collapse: collapse;
+			mso-table-lspace: 0pt;
+			mso-table-rspace: 0pt;
+		}
+
+		.menu a {
+			text-decoration: none;
+			color: black;
+		}
+
+		.menu td {
+			padding-left: 30px;
+		}
+
+		.logo {
+			width: 150px;
+		}
+
+		.header-td {
+			padding-top: 16px;
+			padding-bottom: 16px;
+		}
+
+		.greetings {
+			padding-top: 40px;
+			padding-bottom: 16px;
+		}
+
+
+		.greetings hr {
+			width: 80px;
+			border-color: #ccad53;
+			border-width: 2px;
+			border-style: solid;
+		}
+
+		.thanks {
+			padding-bottom: 24px;
+		}
+
+		.confirmButton {
+			padding-bottom: 56px;
+		}
+		
+		.footerLogo {
+			width: 110px;
+			padding-top: 16px;
+			padding-bottom: 16px;
+		}
+
+		.logoBlock {
+			height: 75px;
+		}
+
+		.menuBlock {
+			padding-top: 20px;
+			padding-bottom: 20px;
+		}
+
+
+	</style>
+</head>
+
+<body style="margin: 0; padding: 0;">
+	<input id="mainInputText" autofocus type="text" class="mainInputText dissable">
+	<header></header>	
+	<main>
+		<div class="leftBlock">
+			<div id="templatesBlock" class="templatesBlock">
+				<div id="templatesBlockBuff" class="templatesBlockBuff">
+
+				</div>
+				<div id="removeTemplateBlock">
+					
+				</div>
+				<div id="dragTemplateBlock">
+					
+				</div>
+			</div>
+			
+			<div class="choseMenu dissable" id="choseMenu">
+
+			</div>
+		</div>
+		
+		<div class="workboard">
+			<div id="letter" class="letter">
+				<div style="font-size:0px;font-color:#ffffff;opacity:0;visibility:hidden;width:0;height:0;display:none;">Тестовое письмо</div>
+				<table cellpadding="0" cellspacing="0" width="100%" bgcolor="#FFFFFF">
+					<tr>
+						<td>
+							<table id="mainTable" class="mainTable table-600" cellpadding="0" cellspacing="0" width="600" align="center">
+								<tr class="header" id="header"></tr>
+								<tr class="main" id="main"></tr>
+								<tr class="footer" id="footer"></tr>
+							</table>
+						</td>
+					</tr> 	 	
+				</table>
+			</div>
+		</div>
+		
+		<div id="settings" class="settings">
+			<div class="updatetitleBlock">
+				<span class="updateTitle">Design</span>
+			</div>
+			<div id="updateTextBlock" class="updateTextBlock dissable">
+				<div class="updateTextFonts">
+					<h5 class="updateTextFontsTitle">Text</h5>
+					<div class="fontFamilyBlock">
+						<span class="fontFamilyTitle">Font-family:</span>
+						<select class="fontFamilyInput" name="fontFamilyInput" id="fontFamilyInput">
+							<option value='"Times New Roman", Times, serif'>'Times New Roman', Times, serif</option>
+							<option value="Georgia, serif">Georgia, serif</option>
+							<option value="Arial, Helvetica, sans-serif">Arial, Helvetica, sans-serif</option>
+							<option value='"Arial Black", Gadget, sans-serif'>'Arial Black', Gadget, sans-serif</option>
+							<option value="Verdana, Geneva, sans-serif">Verdana, Geneva, sans-serif</option>
+							<option value='"Trebuchet MS", Helvetica, sans-serif'>'Trebuchet MS', Helvetica, sans-serif</option>
+							<option value="Impact, Charcoal, sans-serif">Impact, Charcoal, sans-serif</option>
+							<option value='"Comic Sans MS", cursive, sans-serif'>'Comic Sans MS', cursive, sans-serif</option>
+							<option value='"Courier New", Courier, monospace'>'Courier New', Courier, monospace</option>
+						</select>
+					</div>
+					<div class="fontWeightBlock">
+						<span class="fontWeightTitle">Font-weight:</span>
+						<div class="fontWeights">
+							<div class="fontWeightBoldBlock">
+								<span class="fontWeightBoldSpan"><b>Ж</b></span>
+								<input type="checkbox" name="fontWeightBold" id="fontWeightBold">
+							</div>
+							<div class="fontWeightItalicBlock">
+								<span class="fontWeightItalicSpan">К</span>
+								<input type="checkbox" name="fontWeightItalic" id="fontWeightItalic">
+							</div>
+							<div class="fontWeightLinedBlock">
+								<span class="fontWeightLinedSpan">Ч</span>
+								<input type="checkbox" name="fontWeightLined" id="fontWeightLined">
+							</div>
+						</div>
+						<!-- <input class="fontWeightInput" type="text" name="fontWeightInput" id="fontWeightInput"> -->
+					</div>
+					<div class="fontSizeBlock">
+						<span class="fontSizeTitle">Font-size:</span>
+						<input class="fontSizeInput" type="text" name="fontSizeInput" id="fontSizeInput">
+					</div>
+				</div>
+				<div class="updateTextColorBlock">
+					<h5 class="updateTextColorTitle">Fill</h5>
+					<div class="updateFillBlock">
+						<input id="updateTextColor" class="updateTextColor" type="color">
+						<input id="updateTextColorTag" class="updateTextColorTag" type="text" value="#ff0000">
+						<input id="updateTextOpacityInput" class="updateTextOpacityInput" type="text">
+					</div>
+					
+				</div>
+			</div>
+			<div id="updateBackgroundColorBlock" class="updateBackgroundColorBlock dissable">
+				<h5 class="updateTextColorTitle">Fill</h5>
+				<div class="updateFillBlock">
+					<input id="updateBackgroundColor" class="updateBackgroundColor" type="color">
+					<input id="updateBackgroundColorTag" class="updateBackgroundColorTag" type="text" value="#ff0000">
+				</div>
+				
+			</div>
+			<div id="updateImageBlock" class="updateImageBlock dissable">
+				<div class="displayImageBlock">
+					<input class="updateImageInput" type="file" id="updateImageInput">
+					<img class="displayImage" id="displayImage" alt="">
+				</div>
+				<span class="displayImageText">Поменять фото</span>
+			</div>
+			<!-- <div class="updateTextAlignBlock">
+				<h5 class="updateTextAlignTitle">Text alignment</h5>
+				<div class="textAlignBlock">
+					<div class="textAlignLeftBlock">
+						<img class="" src="img/align-left.png" alt="">
+						<input class="textAlignLeftInput" type="checkbox" id="textAlignLeftInput">
+					</div>
+				</div>
+			</div> -->
+		</div>
+	</main>
+	
+	<script src="templates.js" type="text/babel"></script>
+	<script src="mainReact.js" type="text/babel"></script>
+	<script src="app.js" type="text/babel"></script>
+</body>
+
+</html>
+
