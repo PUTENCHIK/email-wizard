@@ -20,7 +20,7 @@
 </head>
 
 <body style="margin: 0; padding: 0;">
-	<input id="mainInputText" autofocus type="text" class="mainInputText dissable">
+	<textarea id="mainInputText" class="mainInputText dissable"> </textarea>
 	<div class="page-header">
 		<div class="letter-name">
 			ProjectName
@@ -63,7 +63,7 @@
 
 		<div class="workboard">
 			<div id="letter" class="letter">
-				<div style="font-size:0px;font-color:#ffffff;opacity:0;visibility:hidden;width:0;height:0;display:none;">Тестовое письмо</div>
+				<div style="font-size:0px;font-color:#ffffff;opacity:0;visibility:hidden;width:0;height:0;display:none;">EmailWizard Letter</div>
 				<table cellpadding="0" cellspacing="0" width="100%" bgcolor="#FFFFFF">
 					<tr>
 						<td>
@@ -84,7 +84,7 @@
 			</div>
 			<div id="updateTextBlock" class="updateTextBlock dissable">
 				<div class="updateTextFonts">
-					<h5 class="updateTextFontsTitle">Тест</h5>
+					<h5 class="updateTextFontsTitle">Текст</h5>
 					<div class="fontFamilyBlock">
 						<span class="fontFamilyTitle">Шрифт:</span>
 						<select class="fontFamilyInput" name="fontFamilyInput" id="fontFamilyInput">
@@ -100,7 +100,7 @@
 						</select>
 					</div>
 					<div class="fontWeightBlock">
-						<span class="fontWeightTitle">Вид шрифта</span>
+						<span class="fontWeightTitle">Выделение:</span>
 						<div class="fontWeights">
 							<div class="fontWeightBoldBlock">
 								<span class="fontWeightBoldSpan"><b>Ж</b></span>
@@ -120,18 +120,21 @@
 					<div class="fontSizeBlock">
 						<span class="fontSizeTitle">Размер шрифта</span>
 						<input class="fontSizeInput" type="text" name="fontSizeInput" id="fontSizeInput">
+						<span class="px">px</span>
 					</div>
 					<div class="lineHeightBlock">
-						<span class="lineHeightTitle">Высота строки:</span>
+						<span class="lineHeightTitle">Межстр. расстояние:</span>
 						<input class="lineHeightInput" type="text" name="lineHeightInput" id="lineHeightInput">
+						<span class="px">%</span>
 					</div>
 					<div class="letterSpacingBlock">
-						<span class="letterSpacingTitle">Строчное расстояние:</span>
+						<span class="letterSpacingTitle">Межбук. расстояние:</span>
 						<input class="letterSpacingInput" type="text" name="letterSpacingInput" id="letterSpacingInput">
+						<span class="px">px</span>
 					</div>
 				</div>
 				<div class="updateTextColorBlock">
-					<h5 class="updateTextColorTitle">Заливка</h5>
+					<h5 class="updateTextColorTitle">Цвет</h5>
 					<div class="updateFillBlock">
 						<input id="updateTextColor" class="updateTextColor" type="color">
 						<input id="updateTextColorTag" class="updateTextColorTag" type="text" value="#ff0000">
@@ -143,26 +146,41 @@
 					<div class="alignments">
 						<input type="radio" name="textAlignment" id="textAlignmentLeft" value="left">
 						<label for="textAlignmentLeft" class="textAlignmentLeftBlock">
-						<span class="textAlignmentLeftSpan">L</span>
+						<span class="textAlignmentLeftSpan">Л</span>
 						</label>
 						
 						<input type="radio" name="textAlignment" id="textAlignmentCenter" value="center">
 						<label for="textAlignmentCenter" class="textAlignmentCenterBlock">
-						<span class="textAlignmentCenterSpan">C</span>
+						<span class="textAlignmentCenterSpan">Ц</span>
 						</label>
 						
 						<input type="radio" name="textAlignment" id="textAlignmentRight" value="right">
 						<label for="textAlignmentRight" class="textAlignmentRightBlock">
-						<span class="textAlignmentRightSpan">R</span>
+						<span class="textAlignmentRightSpan">П</span>
 						</label>
 					</div>
 			   </div>
 			</div>
-			<div id="updateBackgroundColorBlock" class="updateBackgroundColorBlock dissable">
-				<h5 class="updateTextColorTitle">Заливка</h5>
-				<div class="updateFillBlock">
-					<input id="updateBackgroundColor" class="updateBackgroundColor" type="color">
-					<input id="updateBackgroundColorTag" class="updateBackgroundColorTag" type="text" value="#ff0000">
+			<div id="updateBlockBlock" class="updateBlockBlock dissable">
+				<div id="updateBackgroundColorBlock" class="updateBackgroundColorBlock">
+					<h5 class="updateTextColorTitle">Цвет</h5>
+					<div class="updateFillBlock">
+						<input id="updateBackgroundColor" class="updateBackgroundColor" type="color">
+						<input id="updateBackgroundColorTag" class="updateBackgroundColorTag" type="text" value="#ff0000">
+					</div>
+				</div>
+				<div class="updateBlockAlignmentBlock">
+					<h5 class="updateBlockAlignmentTitle">Отступы для шаблона</h5>
+					<label class="updateImagePaddingLeftLabel">
+						Отступ сверху:
+						<input id="updateBlockPaddingTopInput" class="updateImageWidthInput" type="text">
+						<span class="px">px</span>
+					</label>
+					<label class="updateImagePaddingLeftLabel">
+						Отступ снизу:
+						<input id="updateBlockPaddingBotInput" class="updateImageWidthInput" type="text">
+						<span class="px">px</span>
+					</label>
 				</div>
 			</div>
 			<div id="updateImageBlock" class="updateImageBlock dissable">
@@ -172,7 +190,7 @@
 							<img class="displayImage" id="displayImage" alt="Bad URL">
 						</div>
 						<div class="putImageBlock">
-							<span class="displayImageText">Поменять фото:</span>
+							<span class="displayImageText">Поменять картинку:</span>
 							<input id="path" class="putImage" type="text">
 						</div>
 					</div>
@@ -184,21 +202,24 @@
 						</div>
 					</div>
 					<div class="updateImageAlignmentBlock">
-						<h5 class="updateImageAlignmentTitle">Выравнивание</h5>
+						<h5 class="updateImageAlignmentTitle">Отступы</h5>
 						<label for="updateImagePaddingLeftInput" class="updateImagePaddingLeftLabel">Отступ слева:</label>
 						<input id="updateImagePaddingLeftInput" class="updateImageWidthInput" type="text">
+						<span class="px">px</span>
 						<br>
 						<label for="updateImagePaddingRightInput" class="updateImagePaddingRightLabel">Отступ справа:</label>
 						<input id="updateImagePaddingRightInput" class="updateImageHeightInput" type="text">
+						<span class="px">px</span>
 				   </div>
 				   <div class="updateImageSize">
-					<h5 class="updateImageSizeTitle">Image size</h5>
+					<h5 class="updateImageSizeTitle">Размер картинки</h5>
 					<div class="settingsImageSizeBlock">
 						<label for="updateImageWidthInput" class="updateImagePaddingLeftLabel">Ширина:</label>
 						<input id="updateImageWidthInput" class="updateImageWidthInput" type="text">
 						<br>
 						<label for="updateImageHeightInput" class="updateImagePaddingLeftLabel">Высота:</label>
 						<input id="updateImageHeightInput" class="updateImageHeightInput" type="text">
+						<span class="px">px</span>
 					</div>
 				</div>
 			</div>
@@ -207,575 +228,1118 @@
 
 	<script src="../js/models/MyLocalStorage.js"></script>
 	<script src="../js/redirect.js"></script>
-	
+
 	<script type="text/babel">
-		function Header1() {
-			return (
-				<table className="template header1" cellpadding={"0"} cellspacing={"0"} width={"600"} bgcolor={"#FFFFFF"} align={"center"}>
-					<tr>
-						<td align={"center"} height={"75px"} bgcolor={"#333333"}>
-							<img align={"center"} src={"../img/logoFashion.png"} style={{width: "160px"}}/>
-						</td>
-					</tr>
-					<tr>
-						<td align={"center"} style={{paddingTop: "20px", paddingBottom: "20px"}} bgcolor={"#FFFFFF"}>
-							<table cellpadding={"0"} cellspacing={"0"} width={"550"} bgcolor={"#FFFFFF"} align={"center"}>
-								<tr align={"center"}>
-									<td className="menu">
-										<a href="#"><span style={{fontSize: "20px", fontFamily: "Arial, Helvetica, sans-serif"}}>Home</span></a>
-									</td>
-									<td className="menu">
-										<a href="#"><span style={{fontSize: "20px", fontFamily: "Arial, Helvetica, sans-serif"}}>Women</span></a>
-									</td>
-									<td className="menu">
-										<a href="#"><span style={{fontSize: "20px", fontFamily: "Arial, Helvetica, sans-serif"}}>Men</span></a>
-									</td>
-									<td className="menu">
-										<a href="#"><span style={{fontSize: "20px", fontFamily: "Arial, Helvetica, sans-serif"}}>Sale</span></a>
-									</td>
-								</tr>
-							</table>
-						</td>
-					</tr>
-				</table>
-			)
-		}
+        function Header1() {
+            return (
+                <table style={{maxWidth: '600px'}} className="template header1" cellpadding={"0"} cellspacing={"0"} width={"600"} bgcolor={"#FFFFFF"} align={"center"}>
+                    <tr><td></td></tr>
+                    <tr>
+                        <td align={"center"} height={"75px"} bgcolor={"#333333"}>
+                            <img align={"center"} src={"https://i.pinimg.com/originals/d1/2b/cf/d12bcf726d8683c17229522b730ea061.png"} style={{width: "160px"}}/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align={"center"} style={{paddingTop: "20px", paddingBottom: "20px"}} bgcolor={"#FFFFFF"}>
+                            <table cellpadding={"0"} cellspacing={"0"} width={"550"} bgcolor={"#FFFFFF"} align={"center"}>
+                                <tr align={"center"}>
+                                    <td className="menu">
+                                        <a href="#"><p style={{fontSize: "20px", fontFamily: "Arial, Helvetica, sans-serif"}}>Home</p></a>
+                                    </td>
+                                    <td className="menu">
+                                        <a href="#"><p style={{fontSize: "20px", fontFamily: "Arial, Helvetica, sans-serif"}}>Women</p></a>
+                                    </td>
+                                    <td className="menu">
+                                        <a href="#"><p style={{fontSize: "20px", fontFamily: "Arial, Helvetica, sans-serif"}}>Men</p></a>
+                                    </td>
+                                    <td className="menu">
+                                        <a href="#"><p style={{fontSize: "20px", fontFamily: "Arial, Helvetica, sans-serif"}}>Sale</p></a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr><td></td></tr>
+                </table>
+            )
+        }
 
-		function Header2() {
-			return (
-					<table className="template header2" cellpadding={"0"} cellspacing={"0"} width={"600"} bgcolor={"#FFFFFF"} align={"center"}>
-						<tr>
-							<td bgcolor="white" class="header-td">
-								<table class="table-550" cellpadding="0" cellspacing="0" width="550" bgcolor="white" align="center">
-									<tr>
-										<td>
-											<table align="left" class="menu leftMenu" cellpadding="0" cellspacing="0">
-												<tr>
-													<td><a href="#">Menu</a></td>
-													<td><a href="#">Reservation</a></td>
-												</tr>
-											</table>
-										</td>
-										<td align="center">
-											<img style={{width: "150px"}} src="../img/logo.png" alt="logo"/>
-										</td>
-										<td>
-											<table align="center" class="menu rightMenu" cellpadding="0" cellspacing="0">
-												<tr>
-													<td><a href="#">Events</a></td>
-													<td><a href="#">Contact</a></td>
-												</tr>
-											</table>
-										</td>
-									</tr>
-								</table>
-							</td>
-						</tr>
-					</table>
-			)
-		}
+        function Header2() {
+            return (
+                <table className="template header2" cellpadding={"0"} cellspacing={"0"} width={"600"} bgcolor={"#FFFFFF"} align={"center"}>
+                    <tr><td></td></tr>
+                    <tr>
+                        <td bgcolor="#ffffff" class="header-td">
+                            <table class="table-550" cellpadding="0" cellspacing="0" width="550" bgcolor="#ffffff" align="center">
+                                <tr>
+                                    <td>
+                                        <table align="left" class="menu leftMenu" cellpadding="0" cellspacing="0">
+                                            <tr>
+                                                <td><a href="#"><p>Menu</p></a></td>
+                                                <td><a href="#"><p>Reservation</p></a></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td align="center">
+                                        <img style={{width: "150px"}} src="https://tlr.stripocdn.email/content/guids/CABINET_2ec97436767c2a3affe1ca04469ab056/images/211502462728809.png" alt="logo"/>
+                                    </td>
+                                    <td>
+                                        <table align="center" class="menu rightMenu" cellpadding="0" cellspacing="0">
+                                            <tr>
+                                                <td><a href="#"><p>Events</p></a></td>
+                                                <td><a href="#"><p>Contact</p></a></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr><td></td></tr>
+                </table>
+            )
+        }
 
-		function Main1() {
-			return (
-					<table className="template main1" cellpadding={"0"} cellspacing={"0"} width={"600"} bgcolor={"#FFFFFF"} align={"center"}>
-						<tr>
-							<td class="banner-td">
-								<a href="#">
-									<img style={{width: "600px"}} src="../img/welcome.jpg" alt="banner"/>
-								</a>
-							</td>
-						</tr>
-					</table>
-			)
-		}
+        function Header3() {
+            return (
+                <table className="table-600 template header3" cellpading="0" cellspacing="0" width="600" align="center">
+                    <tr><td></td></tr>
+                    <tr>
+                        <td align="left">
+                            <img src="https://1000logos.net/wp-content/uploads/2019/03/Dota-2-Logo.png" width="100" />
+                        </td>
+                        <td align="right" className="menu" style={{fontSize: "18px",fontWeight: "400",letterSpacing: "0.28px",textDecoration: "none"}}>
+                            <table cellpading="0" cellspacing="0">
+                                <tr>
+                                    <td><p href="#" style={{fontFamily: "Arial, Helvetica, sans-serif, 'Raleway"}}>All Pick</p></td>
+                                    <td><p href="#" style={{fontFamily: "Arial, Helvetica, sans-serif, 'Raleway"}}>Turbo</p></td>
+                                    <td><p href="#" style={{fontFamily: "Arial, Helvetica, sans-serif, 'Raleway"}}>Single Draft</p></td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr><td></td></tr>
+                </table>
+            )
+        }
 
-		function Main2() {
-			return (
-					<table className="template main2" cellpadding={"0"} cellspacing={"0"} width={"600"} bgcolor={"#FFFFFF"} align={"center"}>
-						<tr>
-							<td bgcolor="#FFFFFF" align="center" className="greetings">
-								<span style={{fontSize: "32px", fontFamily: "Arial, Helvetica, sans-serif;"}}>Hi Emeli,</span>
-								<hr />
-							</td>
-						</tr>
-						<tr>
-							<td bgcolor="#FFFFFF" align="center" className="thanks">
-								<p style={{lineHeight: "150%", fontSize: "18px", fontFamily: "'Times New Roman', Times, serif"}}>Thanks for registering on our site.<br/>Before we get started, we'll need to verify your email.</p>
-							</td>
-						</tr>
-						<tr>
-							<td bgcolor="#FFFFFF" class="confirmButton">
-								<table className="table-150" bgcolor="#ccad53" cellpadding="0" cellspacing="0" width="200" height="50" align="center">
-									<tr>
-										<td className="confirm" align="center">
-											<span style={{color: "#ffffff", fontSize: "22px", fontFamily: "'Times New Roman', Times, serif"}}>Confirm my email</span>
-										</td>
-									</tr>
-								</table>
-							</td>
-						</tr>
-					</table>
-			)
-		}
+        function Main1() {
+            return (
+                <table className="template main1" cellpadding={"0"} cellspacing={"0"} width={"600"} bgcolor={"#FFFFFF"} align={"center"}>
+                    <tr><td style={{paddingTop: '20px'}}></td></tr>
+                    <tr>
+                        <td class="banner-td">
+                            <img style={{width: "600px"}} src="https://tlr.stripocdn.email/content/guids/CABINET_c7824bb36cccc4a18e117277e3e9d327/images/35121502780295222.jpg" alt="banner"/>
+                        </td>
+                    </tr>
+                    <tr><td></td></tr>
+                </table>
+            )
+        }
 
-		function Footer1() {
-			return (
-				<table className="template footer1" cellpadding={"0"} cellspacing={"0"} width={"600"} bgcolor={"#FFFFFF"} align={"center"}>
-					<tr>
-						<td bgcolor="#FFFFFF" align="center">
-							<hr bgcolor="#cccccc" width="525"/>
-						</td>
-					</tr>
-					<tr>
-						<td align="center" bgcolor="#FFFFFF">
-							<img style={{width: "110px", paddingTop: "16px", paddingBottom: "16px"}} src="../img/logo.png" alt="logo"/>
-						</td>
-					</tr>
-					<tr>
-						<td align="center" bgcolor="#FFFFFF" className="why">
-							<p style={{color: "#666666", fontSize: "13px", fontFamily: "'Times New Roman', Times, serif"}}>You are receiving this email because you have visited our site or asked us about regular newsletter.</p>
-						</td>
-					</tr>
-				</table>
-			)
-		}
+        function Main2() {
+            return (
+                <table className="template main2" cellpadding={"0"} cellspacing={"0"} width={"600"} bgcolor={"#FFFFFF"} align={"center"}>
+                    <tr><td style={{paddingTop: '20px'}}></td></tr>
+                    <tr>
+                        <td bgcolor="#FFFFFF" align="center" className="greetings">
+                            <p style={{fontSize: "32px", fontFamily: "Arial, Helvetica, sans-serif;"}}>Hi Emeli,</p>
+                            <hr />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#FFFFFF" align="center" className="thanks">
+                            <p style={{lineHeight: "150%", fontSize: "18px", fontFamily: "'Times New Roman', Times, serif"}}>Thanks for registering on our site.<br/>Before we get started, we'll need to verify your email.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#FFFFFF" class="confirmButton">
+                            <table className="table-150" bgcolor="#ccad53" cellpadding="0" cellspacing="0" width="200" height="50" align="center">
+                                <tr>
+                                    <td className="confirm" align="center">
+                                        <p style={{color: "#ffffff", fontSize: "22px", fontFamily: "'Times New Roman', Times, serif"}}>Confirm my email</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr><td></td></tr>
+                </table>
+            )
+        }
+
+        function Main3() {
+            return (
+                <table className="template main3" cellpadding={"0"} cellspacing={"0"} width={"600"} bgcolor={"#FFFFFF"} align={"center"}>
+                    <tr><td style={{paddingTop: '20px'}}></td></tr>
+                    <tr>
+                        <td align="left">
+                            <td style={{padding: '20px'}}>
+                                <p style={{fontSize: "14px", fontFamily: "Arial, Helvetica, sans-serif;"}}>Приятно, граждане, наблюдать, как реплицированные с зарубежных источников, современные исследования являются только методом политического участия и смешаны с не уникальными данными до степени совершенной неузнаваемости, из-за чего возрастает их статус бесполезности. Имеется спорная точка зрения, гласящая примерно следующее: активно развивающиеся страны третьего мира представляют собой не что иное, как квинтэссенцию победы маркетинга над разумом и должны быть объявлены нарушающими общечеловеческие нормы этики и морали.</p>
+                            </td>
+                        </td>
+                    </tr>
+                    <tr><td></td></tr>
+                </table>
+            )
+        }
+
+        function Main5() {
+            return (
+                <table  className="template main5" cellpadding={"0"} cellspacing={"0"} width={"600"} bgcolor={"#FFFFFF"} align={"center"}>
+                    <tr><td style={{paddingTop: '20px'}}></td></tr>
+                    <tr>
+                        <td align="left" >
+                            <table cellpadding={"0"} cellspacing={"0"} width={"600"} bgcolor={"#FFFFFF"} align={"center"}>
+                                <tr>
+                                    <td>
+                                        <img style={{minHeight: "500px", minWidth: "200px"}} src="https://fikiwiki.com/uploads/posts/2022-02/1645030221_18-fikiwiki-com-p-kartinki-krasivie-vertikalnie-20.jpg" alt="banner"/>
+                                    </td>
+                                    <td style={{paddingLeft: '30px'}}>
+                                        <p style={{fontSize: "14px", fontFamily: "Arial, Helvetica, sans-serif;"}}>Приятно, граждане, наблюдать, как реплицированные с зарубежных источников, современные исследования являются только методом политического участия и смешаны с не уникальными данными до степени совершенной неузнаваемости, из-за чего возрастает их статус бесполезности. Имеется спорная точка зрения, гласящая примерно следующее: активно развивающиеся страны третьего мира представляют собой не что иное, как квинтэссенцию победы маркетинга над разумом и должны быть объявлены нарушающими общечеловеческие нормы этики и морали.</p>
+                                    </td>
+                                </tr>
+                            </table>
+
+                        </td>
+                    </tr>
+                    <tr><td></td></tr>
+                </table>
+            )
+        }
+
+        function Main6() {
+            return (
+                <table className="template main6" cellpadding={"0"} cellspacing={"0"} width={"600"} bgcolor={"#FFFFFF"} align={"center"}>
+                    <tr><td style={{paddingTop: '20px'}}></td></tr>
+                    <tr>
+                        <td align="center" width="100px" bgcolor="#FADFAD">
+                            <p style={{textOrientation: "upright",writingMode: "vertical-rl",fontSize: "38px",fontFamily: "Arial Black, Gadget, sans-serif"}}>Amazing</p>
+                        </td>
+                        <td align="center" width="400px">
+                            <img style={{width: "380px"}} src="https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_6527776a9523772f00ea671e_652778529bc67b6489d88566/scale_1200"/>
+                        </td>
+                        <td align="center" width="100px" bgcolor="#FADFAD">
+                            <p style={{textOrientation: "upright",writingMode: "vertical-rl",fontSize: "38px",fontFamily: "Arial Black, Gadget, sans-serif"}}>Pets</p>
+                        </td>
+                    </tr>
+                    <tr><td></td></tr>
+                </table>
+            )
+        }
+
+        function Main7() {
+            return (
+                <table className="template main7" cellpadding={"0"} cellspacing={"0"} width={"600"} bgcolor={"#FFFFFF"} align={"center"}>
+                    <tr><td style={{paddingTop: '20px'}}></td></tr>
+                    <tr>
+                        <td align="left">
+                            <table cellpadding={"0"} cellspacing={"0"} width={"600"} bgcolor={"#FFFFFF"} align={"center"}>
+                                <tr>
+                                    <td style={{paddingRight: '30px'}}>
+                                        <p style={{fontSize: "14px", fontFamily: "Arial, Helvetica, sans-serif;"}}>Приятно, граждане, наблюдать, как реплицированные с зарубежных источников, современные исследования являются только методом политического участия и смешаны с не уникальными данными до степени совершенной неузнаваемости, из-за чего возрастает их статус бесполезности. Имеется спорная точка зрения, гласящая примерно следующее: активно развивающиеся страны третьего мира представляют собой не что иное, как квинтэссенцию победы маркетинга над разумом и должны быть объявлены нарушающими общечеловеческие нормы этики и морали.</p>
+                                    </td>
+                                    <td>
+                                        <img style={{minHeight: "500px", minWidth: "200px"}} src="https://fikiwiki.com/uploads/posts/2022-02/1645030221_18-fikiwiki-com-p-kartinki-krasivie-vertikalnie-20.jpg" alt="banner"/>
+                                    </td>
+                                </tr>
+                            </table>
+
+                        </td>
+                    </tr>
+                    <tr><td></td></tr>
+                </table>
+            )
+        }
+
+        function Main8() {
+            return (
+                <table className="template main8" cellpadding={"0"} cellspacing={"0"} width={"600"} bgcolor={"#FFFFFF"} align={"center"}>
+                    <tr><td style={{paddingTop: '20px'}}></td></tr>
+                    <tr>
+                        <td align="left">
+                            <table cellpadding={"0"} cellspacing={"0"} width={"600"} bgcolor={"#FFFFFF"} align={"center"}>
+                                <tr>
+                                    <td style={{paddingRight: '50px'}}>
+                                        <img style={{minHeight: "200px", minWidth: "150px"}} src="https://fikiwiki.com/uploads/posts/2022-02/1645030221_18-fikiwiki-com-p-kartinki-krasivie-vertikalnie-20.jpg" alt="banner"/>
+                                    </td>
+                                    <td style={{paddingRight: '50px'}}>
+                                        <img style={{minHeight: "200px", minWidth: "150px"}} src="https://fikiwiki.com/uploads/posts/2022-02/1645030221_18-fikiwiki-com-p-kartinki-krasivie-vertikalnie-20.jpg" alt="banner"/>
+                                    </td>
+                                    <td>
+                                        <img style={{minHeight: "200px", minWidth: "150px"}} src="https://fikiwiki.com/uploads/posts/2022-02/1645030221_18-fikiwiki-com-p-kartinki-krasivie-vertikalnie-20.jpg" alt="banner"/>
+                                    </td>
+                                </tr>
+                            </table>
+
+                        </td>
+                    </tr>
+                    <tr><td></td></tr>
+                </table>
+            )
+        }
+
+        function Main9() {
+            return (
+                <table className="template main9" cellpadding={"0"} cellspacing={"0"} width={"600"} bgcolor={"#FFFFFF"} align={"center"}>
+                    <tr><td style={{paddingTop: '20px'}}></td></tr>
+                    <tr>
+                        <td align='center' width="30px" height="30px" bgcolor='#000000' >
+                            <p style={{color: '#ffffff'}}>1</p>
+                        </td>
+                        <td style={{paddingLeft: '20px'}}>
+                            <p style={{fontSize: '24px'}}>GREEN TEA "HEAVENLY TEARS"</p>
+                        </td>
+                    </tr>
+                    <tr><td></td></tr>
+                </table>
+            )
+        }
+
+        function Main10() {
+            return (
+                <table className="template main10" cellpadding={"0"} cellspacing={"0"} width={"600"} bgcolor={"#FFFFFF"} align={"center"}>
+                    <tr><td style={{paddingTop: '20px'}}></td></tr>
+                    <tr>
+                        <td style={{paddingRight: '50px'}}>
+                            <img style={{minHeight: "150px", minWidth: "150px"}} src="https://tlr.stripocdn.email/content/guids/CABINET_f4bfb3d2f68f1f9808ca04e1386d274e/images/341504076871783.jpg" alt="banner"/>
+                        </td>
+                        <td>
+                            <table cellpadding={"0"} cellspacing={"0"} bgcolor={"#FFFFFF"} align={"center"}>
+                                <tr>
+                                    <td style={{paddingBottom: '20px'}}>
+                                        <p style={{fontSize: '24px'}}>Perfect on its own</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p style={{fontSize: '14px'}}>Each tear gracefully unfurls and dances in the water, gradually releasing a sublime and refined flavor. One of our most famous and highly prized teas. Ingredients: green tea, jasmine.</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr><td></td></tr>
+                </table>
+            )
+        }
+
+        function Main11() {
+            return (
+                <table className="table-600 template main11" cellpading="0" cellspacing="0" width="600" align="center">
+                    <tr><td></td></tr>
+                    <tr bgcolor="#ffffff">
+                        <td height="80" width="600"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table className="things" cellpading="0" cellspacing="0" width="600" align="center" bgcolor="#ffffff">
+                                <tr valign="top">
+                                    <td>
+                                        <table cellpading="0" cellspacing="0" align="center">
+                                            <tr>
+                                                <td align="center">
+                                                    <img src="https://dota2.ru/img/items/iron_branch.jpg?1661172505"/>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td height="120" width="200" align="center">
+                                                    <p style={{fontFamily: 'Arial, Helvetica, sans-serif, Raleway'}}>Сажает в указанное место маленькое счастливое деревце, которое исчезнет через 20 секунд.</p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table cellpading="0" cellspacing="0" align="center">
+                                            <tr>
+                                                <td align="center">
+                                                    <img src="https://dota2.ru/img/items/enchanted_mango.jpg?1682262783"/>
+                                                </td>
+                                            </tr>
+                                            <tr height="120">
+                                                <td width="200" align="center">
+                                                    <p style={{fontFamily: 'Arial, Helvetica, sans-serif, Raleway'}}>Мгновенно восстанавливает 100 маны.</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table cellpading="0" cellspacing="0" align="center">
+                                            <tr>
+                                                <td align="center">
+                                                    <img src="https://dota2.ru/img/items/tango.jpg?1691583989"/>
+                                                </td>
+                                            </tr>
+                                            <tr height="120">
+                                                <td width="200" align="center">
+                                                    <p style={{fontFamily: 'Arial, Helvetica, sans-serif, Raleway'}}>
+                                                        Съедает дерево, увеличивая восстановление здоровья на 7.
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="center">
+                                        <table cellpading="0" cellspacing="0" valign="top">
+                                            <tr>
+                                                <td align="center">
+                                                    <p> Читайте Дальше...</p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td align="center">
+                                        <table cellpading="0" cellspacing="0" valign="top">
+                                            <tr>
+                                                <td align="center">
+                                                    <p> Читайте Дальше...</p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td align="center">
+                                        <table cellpading="0" cellspacing="0" valign="top">
+                                            <tr>
+                                                <td align="center">
+                                                    <p> Читайте Дальше...</p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr><td></td></tr>
+                </table>
+            )
+        }
+
+        function Main12() {
+            return (
+                <table className="table-600 template main12" cellpading="0" cellspacing="0" width="600" align="center">
+                    <tr><td></td></tr>
+                    <tr>
+                        <td>
+                            <table ClassName="things" cellpading="0" cellspacing="0" width="600" height="75" align="center" bgcolor="#ffffff"></table>
+                        </td>
+                    </tr>
+                    <tr ClassName="genius">
+                        <td>
+                            <table ClassName="things" cellpading="0" cellspacing="0" width="600" align="center" bgcolor="#ffffff">
+                                <tr valign="top">
+                                    <td>
+                                        <table cellpading="0" cellspacing="0" align="center">
+                                            <tr>
+                                                <td width="250" align="center">
+                                                    <p  textIndent="40px">Лучше пофармить, чем не пофармить. Если встает выбор между тимейтом и фармом, я выберу конечно крипа, потому что там я погибну, а там монетку получу!</p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table cellpading="0" cellspacing="0" align="center">
+                                            <tr>
+                                                <td width="250" align="center">
+                                                    <p style={{fontFamily: "Arial, Helvetica, sans-serif, Raleway"}} text-indent="40px">Знание — сила.<br/>Без Знаний ты не сможешь кастовать мои заклинания, а также без знаний ты не сможешь выйграть мид против меня</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="center">
+                                        <table cellpading="0" cellspacing="0" valign="top">
+                                            <tr>
+                                                <td align="center">
+                                                    <img src="" height="50" style={{borderRadius: "30px"}}/>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td width="300" align="center">
+                                                    <h3 style={{fontFamily: "Arial, Helvetica, sans-serif, Raleway"}}><p>Ursa</p></h3>
+                                                    <p ClassName="who" color="#D3D3D3" style={{fontFamily: "Arial, Helvetica, sans-serif, Raleway"}}>Персонаж Доты</p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td align="center">
+                                        <table cellpading="0" cellspacing="0" valign="top">
+                                            <tr>
+                                                <td align="center">
+                                                    <img src="" height="50" style={{borderRadius: "30px"}}/>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td width="300" align="center">
+                                                    <h3 style={{fontFamily: "Arial, Helvetica, sans-serif, Raleway"}}><p>Invoker</p></h3>
+                                                    <p ClassName="who" style={{fontFamily: "Arial, Helvetica, sans-serif, Raleway"}}>Персонаж Доты</p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr><td></td></tr>
+                </table>
+            )
+        }
+
+        function Main4() {
+            return (
+                <table className="template Main13" cellpadding="0" cellspacing="0" width="600" align="center">
+                    <tr><td style={{paddingTop: '20px'}}></td></tr>
+                    <tr>
+                        <td>
+                            <table>
+                                <tr>
+                                    <td className="things" cellpading="0" cellspacing="0" width="600" height="65" align="center">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td className="S" align="center">
+                                        <table className="header-td menu">
+                                            <tr className="S" width ="600" cellpading="0" align="center">
+                                                <td align="center" cellspacing="0" cellpading="25" style={{fontFamily: "Arial, Helvetica, sans-serif, Raleway", color: "#808080"}}>
+                                                    <table>
+                                                        <tr>
+                                                            <td><img src="https://janesstory.ru/upload/iblock/9b3/pgo3w2167iez3f6wriagbohm5r08gvsh.jpg" height="155"/></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td align="center" style={{color: "#000000"}}><p>Black Bag</p></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td align="center" style={{fontSize: "28px",fontFamily: "Arial Black, Gadget, sans-serif",lineHeight: "1.5"}}><p align="center">$90.00</p></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td bgcolor="#ED760E" width="170" align="center" style={{fontSize: "24px",fontFamily: "Arial Black, Gadget, sans-serif",lineHeight: "1.5",color: "#ffffff"}}><p align="center">Buy Now</p></td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                                <td align="center" cellspacing="0" cellpading="25" style={{fontFamily: "Arial, Helvetica, sans-serif, Raleway", color: "#808080"}}>
+                                                    <table>
+                                                        <tr>
+                                                            <td><img src="https://personal-gifts.ru/upload/iblock/2bc/2bc18b8eb126a0c42978754892725569.jpg" height="155"/></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td align="center" style={{color: "#000000"}}><p>Black Wallet</p></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td align="center" style={{fontSize: "28px",fontFamily: "Arial Black, Gadget, sans-serif",lineHeight: "1.5"}}><p align="center">$35.00</p></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td bgcolor="#ED760E" width="170" align="center" style={{fontSize: "24px",fontFamily: "Arial Black, Gadget, sans-serif",lineHeight: "1.5",color: "#ffffff"}}><p align="center">Buy Now</p></td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                                <td align="center" cellspacing="0" cellpading="25" style={{fontFamily: "Arial, Helvetica, sans-serif, Raleway", color: "#808080"}}>
+                                                    <table>
+                                                        <tr>
+                                                            <td><img src="https://main-cdn.sbermegamarket.ru/big1/hlr-system/-16/336/984/904/221/310/600006635671b0.jpg" height="155"/></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td align="center"  style={{color: "#000000"}}><p>Black Watch</p></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td align="center" style={{fontSize: "28px",fontFamily: "Arial Black, Gadget, sans-serif",lineHeight: "1.5"}}><p align="center">$55.00</p></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td bgcolor="#ED760E" width="170" align="center" style={{fontSize: "24px",fontFamily: "Arial Black, Gadget, sans-serif",lineHeight: "1.5",color: "#ffffff"}}><p align="center">Buy Now</p></td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+
+                                                <td align="center" cellspacing="70" style={{fontFamily: "Arial, Helvetica, sans-serif, Raleway", color: "#DCDCDC",paddingRight: "30px"}}>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <table className="things" cellpading="0" cellspacing="0" width="600" height="5" align="center"></table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td className="things" cellpading="0" cellspacing="0" width="600" height="75" align="center">
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr><td></td></tr>
+                </table>
+            )
+        }
+
+        function Footer1() {
+            return (
+                <table className="template footer1" cellpadding={"0"} cellspacing={"0"} width={"600"} bgcolor={"#FFFFFF"} align={"center"}>
+                    <tr><td style={{paddingTop: '20px'}}></td></tr>
+                    <tr>
+                        <td bgcolor="#FFFFFF" align="center">
+                            <hr bgcolor="#cccccc" width="525"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center" bgcolor="#FFFFFF">
+                            <img style={{width: "110px", paddingTop: "16px", paddingBottom: "16px"}} src="https://tlr.stripocdn.email/content/guids/CABINET_2ec97436767c2a3affe1ca04469ab056/images/211502462728809.png" alt="logo"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center" bgcolor="#FFFFFF" className="why">
+                            <p style={{color: "#666666", fontSize: "13px", fontFamily: "'Times New Roman', Times, serif"}}>You are receiving this email because you have visited our site or asked us about regular newsletter.</p>
+                        </td>
+                    </tr>
+                    <tr><td></td></tr>
+                </table>
+            )
+        }
+
+        function Footer2() {
+            return (
+                <table className="template Footer3" cellpadding="0" cellspacing="0" width="600" align="center">
+                    <tr><td style={{paddingTop: '20px'}}></td></tr>
+                    <tr>
+                        <td bgcolor="#333333">
+                            <table>
+                                <tr>
+                                    <td className="things" cellpading="0" cellspacing="0" width="600" height="65" align="center">
+                                    </td>
+                                </tr>
+                                <tr align="center">
+                                    <td><img src="https://dnahealthcorp.com/wp-content/uploads/2020/07/DNA-Logo-Grey-and-Green.png" height="105"/></td>
+                                </tr>
+                                <tr>
+                                    <td className="things" cellpading="0" cellspacing="0" width="600" height="45" align="center">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td className="S" align="center">
+                                        <table className="header-td menu">
+                                            <tr className="S" width ="400" cellpading="0" cellspacing="30" align="center">
+                                                <td align="center" style={{fontFamily: "Arial, Helvetica, sans-serif, Raleway", color: "#DCDCDC"}}><p>About us</p></td>
+                                                <td align="center" style={{fontFamily: "Arial, Helvetica, sans-serif, Raleway", color: "#DCDCDC"}}><p>Team</p></td>
+                                                <td align="center" style={{fontFamily: "Arial, Helvetica, sans-serif, Raleway", color: "#DCDCDC"}}><p>News</p></td>
+                                                <td align="center" style={{fontFamily: "Arial, Helvetica, sans-serif, Raleway", color: "#DCDCDC"}}><p>Contact us</p></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <table className="things" cellpading="0" cellspacing="0" width="600" height="5" align="center"></table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td className="things" cellpading="0" cellspacing="0" width="600" height="75" align="center">
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr><td></td></tr>
+                </table>
+            )
+        }
+
 	</script>
 	<script type="text/babel">
-		const headerNode = document.getElementById("header");
-		const header = ReactDOM.createRoot(headerNode);
-		const mainNode = document.getElementById("main");
-		const main = ReactDOM.createRoot(mainNode);
-		const footerNode = document.getElementById("footer");
-		const footer = ReactDOM.createRoot(footerNode);
-
-		const choseNode = document.getElementById("choseMenu");
-		const chose = ReactDOM.createRoot(choseNode);
-
-		const templatesBlockBuffNode = document.getElementById("templatesBlockBuff");
-		const templatesBlock = ReactDOM.createRoot(templatesBlockBuffNode);
-
-		const changeTemplatesBlockNode = document.getElementById("changeTemplatesBlock");
-		const changeTemplatesBlock = ReactDOM.createRoot(changeTemplatesBlockNode);
-
-		let letterReact = document.getElementById("letter");
-		let removeMode = false;
-
-		let currentHeader;
-		let currentMain;
-		let currentFooter;
-		let currentLoadMenu;
-
-		let headersArray = [<Header1 />, <Header2 />]
-		let mainsArray = [<Main1 />, <Main2 />]
-		let footersArray = [<Footer1 />]
-
-		function handlerChose(e) {
-			let object = e.target;
-
-			if (object.closest('.choseOption')) {
-				object = object.closest('.choseOption');
-
-				let numChose = object.classList[1].at(-1);
-
-				if (object.classList.contains("header")) {
-					currentHeader.press(numChose - 1);
-				}
-				else if (object.classList.contains("main")) {
-					currentMain.press(numChose - 1);
-				}
-				else if (object.classList.contains("footer")) {
-					currentFooter.press(numChose - 1);
-				}
-			}
-		}
-
-		function ChoseHeader() {
-			const listItems = headersArray.map((header, index) =>
-					<div className={"choseOption " + "headerMenu" + String(index+1) + " header"}>
-						<div className="choseWrapper">
-							{header}
-						</div>
-					</div>
-			);
-
-			return (<div onClick={handlerChose}>
-				{listItems}
-			</div>)
-		}
-
-		function ChoseMain() {
-			const listItems = mainsArray.map((main, index) =>
-					<div className={"choseOption " + "mainMenu" + String(index+1) + " main"}>
-						<div className="choseWrapper">
-							{main}
-						</div>
-					</div>
-			);
-
-			return (<div onClick={handlerChose}>
-				{listItems}
-			</div>)
-		}
-
-		function ChoseFooter() {
-			const listItems = footersArray.map((footer, index) =>
-					<div className={"choseOption " + "footerMenu" + String(index+1) + " footer"}>
-						<div className="choseWrapper">
-							{footer}
-						</div>
-					</div>
-			);
-
-			return (<div onClick={handlerChose}>
-				{listItems}
-			</div>)
-		}
-
-		class CurrentHeader extends React.Component {
-			constructor(props) {
-				super(props);
-				this.press = this.press.bind(this);
-				this.state = {content: <Header1 />};
-			}
-			press(numChose) {
-				this.setState({content: headersArray[numChose]});
-			}
-			deleter() {
-				this.setState({content: ""});
-			}
-			render() {
-				currentHeader = this;
-				return (
-						this.state.content
-				);
-			}
-		}
-
-		class CurrentMain extends React.Component {
-			constructor(props) {
-				super(props);
-				this.press = this.press.bind(this);
-				this.state = {content: [<Main1 />, <Main2 />]};
-			}
-			press(numChose) {
-				this.state.content.push(mainsArray[numChose]);
-				let buff = this.state.content;
-				this.setState({content: buff});
-				if (dragTemplateButton.classList.contains("pressed")) {
-					changeMoveMode();
-				}
-				if (removeTemplateButton.classList.contains("pressed")) {
-					RemoveTemplateHandler();
-				}
-			}
-			render() {
-				currentMain = this;
-				return (
-					this.state.content
-				);
-			}
-		}
-
-		class CurrentFooter extends React.Component {
-			constructor(props) {
-				super(props);
-				this.press = this.press.bind(this);
-				this.state = {content: <Footer1 />};
-			}
-			press(numChose) {
-				this.setState({content: footersArray[numChose]});
-			}
-			deleter() {
-				this.setState({content: ""});
-			}
-			render() {
-				currentFooter = this;
-				return (
-						this.state.content
-				);
-			}
-		}
-
-		function LoadTemplatesMenuHandler(e) {
-			let object = e.target.closest(".typeTemplateBlock");
-
-			if (object.classList.contains("headerTypeTemplateBlock")) {
-				currentLoadMenu.press("header")
-			}
-			else if (object.classList.contains("mainTypeTemplateBlock")) {
-				currentLoadMenu.press("main")
-			}
-			else if (object.classList.contains("footerTypeTemplateBlock")) {
-				currentLoadMenu.press("footer")
-			}
-		}
-
-		function TemplatesBlockComponent() {
-			return (
-					<div className="typesTemplates" id="typesTemplates">
-						<div onClick={LoadTemplatesMenuHandler} className="typeTemplateBlock headerTypeTemplateBlock">
-							<img className="TypeTemplateImg" src="../img/headerTemplate.png" alt="" />
-						</div>
-						<div onClick={LoadTemplatesMenuHandler} className="typeTemplateBlock mainTypeTemplateBlock">
-							<img className="TypeTemplateImg" src="../img/mainTemplate.png" alt="" />
-						</div>
-						<div onClick={LoadTemplatesMenuHandler} className="typeTemplateBlock footerTypeTemplateBlock">
-							<img className="TypeTemplateImg" src="../img/footerTemplate.png" alt="" />
-						</div>
-					</div>
-			)
-		}
-
-		class LoadTemplatesMenu extends React.Component {
-			constructor(props) {
-				super(props);
-				this.press = this.press.bind(this);
-				this.state = {content: <ChoseHeader />};
-			}
-			press(typeTemplate) {
-				if (typeTemplate === "header") {
-					this.setState({content: <ChoseHeader />});
-				}
-				else if (typeTemplate === "main") {
-					this.setState({content: <ChoseMain />});
-				}
-				else if (typeTemplate === "footer") {
-					this.setState({content: <ChoseFooter />});
-				}
-			}
-			render() {
-				currentLoadMenu = this;
-				return (
-						this.state.content
-				);
-			}
-		}
-
-
-		function deleteTemplateOver(e) {
-			let object = e.target.closest(".template");
-			if (e.relatedTarget) {
-				if (object == e.relatedTarget.closest(".template")) {
-					return;
-				}
-
-				object.style.outline = "4px solid #E74C3C";
-
-				let previousObject = e.relatedTarget.closest(".template");
-				if (previousObject) {
-					previousObject.style.outline = "";
-				}
-			}
-			else {
-				object.style.outline = "4px solid #E74C3C";
-			}
-		}
-
-		function deleteTemplateOut(e) {
-			if (e.relatedTarget) {
-				if (e.target.closest(".template") === e.relatedTarget.closest(".template")) {
-					return;
-				}
-				e.target.closest(".template").style.outline = "";
-			}
-		}
-
-		function moveTemplateOver(e) {
-			let object = e.target.closest(".template");
-
-			if (object.parentElement.classList.contains("header") || object.parentElement.classList.contains("footer")
-			 	|| object.parentElement.parentElement.classList.contains("header") || object.parentElement.parentElement.classList.contains("footer")) {
-				return;
-			}
-
-			if (e.relatedTarget) {
-				if (object == e.relatedTarget.closest(".template")) {
-					return;
-				}
-
-				object.style.outline = "4px solid #3498DB";
-
-				let previousObject = e.relatedTarget.closest(".template");
-				if (previousObject) {
-					previousObject.style.outline = "";
-				}
-			}
-			else {
-				object.style.outline = "4px solid #3498DB";
-			}
-		}
-
-		function moveTemplateOut(e) {
-			if (e.relatedTarget) {
-				if (e.target.closest(".template") === e.relatedTarget.closest(".template")) {
-					return;
-				}
-				e.target.closest(".template").style.outline = "";
-			}
-		}
-
-		function handleDeleteClick(e) {
-			let object = e.target.closest(".template")
-			let parent = object.parentElement;
-			let mainTable = document.getElementsByClassName("mainTable")[0];
-
-			if (mainTable.classList.contains("from-storage")) {
-				parent.removeChild(object); 
-			}
-			else {
-				if (parent.classList.contains("header")) {
-				currentHeader.deleter();
-			}
-			else if (parent.classList.contains("main")) {
-				parent.removeChild(object); 
-			}
-			else if (parent.classList.contains("footer")) {
-				currentFooter.deleter();
-			}
-			}
-		}
-
-		function RemoveTemplateHandler() {
-			let removeTemplateButton = document.getElementById("removeTemplateButton");
-			let dragTemplateButton = document.getElementById("dragTemplateButton");
-			let mainTable = document.getElementsByClassName("mainTable")[0];
-
-			if (removeMode) {
-				removeMode = false;
-				mainTable.removeEventListener("mouseover", deleteTemplateOver);
-				mainTable.removeEventListener("mouseout", deleteTemplateOut);
-				removeTemplateButton.classList.remove("pressed");
-
-				letterReact.removeEventListener("click", handleDeleteClick);
-			}
-			else {
-				if (dragTemplateButton.classList.contains("pressed")) {
-					changeMoveMode();
-				}
-
-				removeMode = true;
-
-				mainTable.addEventListener("mouseover", deleteTemplateOver);
-				mainTable.addEventListener("mouseout", deleteTemplateOut);
-				removeTemplateButton.classList.add("pressed");
-
-				letterReact.addEventListener("click", handleDeleteClick);
-			}
-		}
-
-		// drag
-		function changeMoveMode() {
-			let mainTemplates = document.getElementById("main");
-			let dragElements = mainTemplates.querySelectorAll(".template");
-			let removeTemplateButton = document.getElementById("removeTemplateButton");
-			let dragTemplateButton = document.getElementById("dragTemplateButton");
-			let mainTable = document.getElementsByClassName("mainTable")[0];
-
-			if (moveMode) {
-				moveMode = false;
-				dragTemplateButton.classList.remove("pressed");
-
-				mainTable.removeEventListener("mouseover", moveTemplateOver);
-				mainTable.removeEventListener("mouseout", moveTemplateOut);
-
-				for (let i = 0; i < dragElements.length; i++) {
-					dragElements[i].draggable = false;
-				}
-
-				mainTemplates.removeEventListener(`dragover`, handlerMoveTemplate);
-			}
-			else {
-				if (removeTemplateButton.classList.contains("pressed")) {
-					RemoveTemplateHandler();
-				}
-
-				moveMode = true;
-				dragTemplateButton.classList.add("pressed");
-				mainTable.addEventListener("mouseover", moveTemplateOver);
-				mainTable.addEventListener("mouseout", moveTemplateOut);
-
-				for (let i = 0; i < dragElements.length; i++) {
-					dragElements[i].draggable = true;
-				}
-
-
-
-				mainTemplates.addEventListener(`dragover`, handlerMoveTemplate);
-
-				mainTemplates.addEventListener(`dragstart`, e => {
-					let object = e.target.closest(".template");
-
-					if (object.draggable === true) {
-						object.classList.add(`selected`);
-					}
-
-				});
-
-				mainTemplates.addEventListener(`dragend`, e => {
-					let object = e.target.closest(".template");
-
-					object.classList.remove(`selected`);
-				});
-			}
-		}
-
-
-
-		let getNextElement = (cursorPosition, currentElement) => {
-			let currentElementCoord = currentElement.getBoundingClientRect();
-			let currentElementCenter = currentElementCoord.y + currentElementCoord.height / 2;
-
-			let nextElement = (cursorPosition < currentElementCenter) ?
-					currentElement :
-					currentElement.nextElementSibling;
-
-			return nextElement;
-		};
-
-		function handlerMoveTemplate(e) {
-			e.preventDefault();
-
-			let mainTemplates = document.getElementById("main");
-			let activeElement = mainTemplates.querySelector(`.selected`);
-
-			if (!activeElement) {
-				return;
-			}
-
-			let currentElement = e.target.closest(".template");
-
-
-			let isMoveable = activeElement !== currentElement;
-			if (!isMoveable) {
-				return;
-			}
-
-			let nextElement = getNextElement(e.clientY, currentElement);
-
-			if (!nextElement) {
-				nextElement = mainTemplates.lastChild;
-				nextElement.after(activeElement);
-			}
-			else {
-				nextElement.before(activeElement);
-			}
-		}
-
-		// Рендер только если в хранилище не сохранён html текущего письма
+        const headerNode = document.getElementById("header");
+        const header = ReactDOM.createRoot(headerNode);
+        const mainNode = document.getElementById("main");
+        const main = ReactDOM.createRoot(mainNode);
+        const footerNode = document.getElementById("footer");
+        const footer = ReactDOM.createRoot(footerNode);
+
+        const choseNode = document.getElementById("choseMenu");
+        const chose = ReactDOM.createRoot(choseNode);
+
+        const templatesBlockBuffNode = document.getElementById("templatesBlockBuff");
+        const templatesBlock = ReactDOM.createRoot(templatesBlockBuffNode);
+
+        const changeTemplatesBlockNode = document.getElementById("changeTemplatesBlock");
+        const changeTemplatesBlock = ReactDOM.createRoot(changeTemplatesBlockNode);
+
+        let letterReact = document.getElementById("letter");
+        let removeMode = false;
+
+        let currentHeader;
+        let currentMain;
+        let currentFooter;
+        let currentLoadMenu;
+        let currentTemplateLoad;
+        let pageHeader = document.getElementsByClassName('page-header')[0];
+        let loadedTemplate = [false, false, false]
+
+        let headersArray = [<Header1 />, <Header2 />, <Header3 />]
+        let mainsArray = [<Main1 />, <Main2 />, <Main3 />, <Main4 />, <Main5 />, <Main6 />, <Main7 />, <Main8 />, <Main9 />, <Main10 />, <Main11 />, <Main12 />]
+        let footersArray = [<Footer1 />, <Footer2 />]
+
+        function handlerChose(e) {
+            let object = e.target;
+            // let body = document.getElementsByTagName('body')[0];
+
+            if (object.closest('.choseOption')) {
+                object = object.closest('.choseOption');
+
+                let numChose = object.classList[1].replace(/^\D+/g, '');
+
+                if (object.classList.contains("header")) {
+                    currentHeader.press(numChose - 1);
+
+                    pageHeader.scrollIntoView({ behavior: "smooth", block: "start", inline: "start" });
+
+                    let lastheader = headerNode.children;
+
+                    setTimeout( function() {
+                        lastheader[0].style.outline = '4px dashed black';
+                        setTimeout( function() {
+                            lastheader[0].style.outline = 'none';
+                        }, 5000);
+                    }, 300);
+                }
+                else if (object.classList.contains("main")) {
+                    currentMain.press(numChose - 1);
+                    footerNode.scrollIntoView({ behavior: "smooth", block: "start", inline: "start" });
+                    let lastmain = mainNode.children;
+
+                    setTimeout( function() {
+                        lastmain[lastmain.length - 1].style.outline = '4px dashed black';
+                        setTimeout( function() {
+                            lastmain[lastmain.length - 1].style.outline = 'none';
+                        }, 5000);
+                    }, 300);
+                }
+                else if (object.classList.contains("footer")) {
+                    currentFooter.press(numChose - 1);
+                    footerNode.scrollIntoView({ behavior: "smooth", block: "start", inline: "start" });
+
+                    let lastfooter = footerNode.children;
+
+                    setTimeout( function() {
+                        lastfooter[0].style.outline = '4px dashed black';
+                        setTimeout( function() {
+                            lastfooter[0].style.outline = 'none';
+                        }, 5000);
+                    }, 300);
+                }
+            }
+        }
+
+        function ChoseHeader() {
+            const listItems = headersArray.map((header, index) =>
+                <div className={"choseOption " + "headerMenu" + String(index+1) + " header noselect"}>
+                    <div className="choseWrapper">
+                        {header}
+                    </div>
+                </div>
+            );
+
+            return (<div onClick={handlerChose}>
+                {listItems}
+            </div>)
+        }
+
+        function ChoseMain() {
+            const listItems = mainsArray.map((main, index) =>
+                <div className={"choseOption " + "mainMenu"+ String(index+1) + " main noselect"}>
+                    <div className="choseWrapper">
+                        {main}
+                    </div>
+                </div>
+            );
+
+            return (<div onClick={handlerChose}>
+                {listItems}
+            </div>)
+        }
+
+        function ChoseFooter() {
+            const listItems = footersArray.map((footer, index) =>
+                <div className={"choseOption " + "footerMenu" + String(index+1) + " footer noselect"}>
+                    <div className="choseWrapper">
+                        {footer}
+                    </div>
+                </div>
+            );
+
+            return (<div onClick={handlerChose}>
+                {listItems}
+            </div>)
+        }
+
+        class CurrentHeader extends React.Component {
+            constructor(props) {
+                super(props);
+                this.press = this.press.bind(this);
+                this.state = {content: <Header2 />};
+            }
+            press(numChose) {
+                this.setState({content: headersArray[numChose]});
+            }
+            deleter() {
+                this.setState({content: ""});
+            }
+            render() {
+                currentHeader = this;
+                return (
+                    this.state.content
+                );
+            }
+        }
+
+        class CurrentMain extends React.Component {
+            constructor(props) {
+                super(props);
+                this.press = this.press.bind(this);
+                this.state = {content: [<Main5 />, <Main9 />, <Main10 />, <Main6 />]};
+            }
+            press(numChose) {
+                this.state.content.push(mainsArray[numChose]);
+                let buff = this.state.content;
+                this.setState({content: buff});
+                if (dragTemplateButton.classList.contains("pressed")) {
+                    changeMoveMode();
+                }
+                if (removeTemplateButton.classList.contains("pressed")) {
+                    RemoveTemplateHandler();
+                }
+
+            }
+            render() {
+                currentMain = this;
+                return (
+                    this.state.content
+                );
+            }
+        }
+
+        class CurrentFooter extends React.Component {
+            constructor(props) {
+                super(props);
+                this.press = this.press.bind(this);
+                this.state = {content: <Footer1 />};
+            }
+            press(numChose) {
+                this.setState({content: footersArray[numChose]});
+            }
+            deleter() {
+                this.setState({content: ""});
+            }
+            render() {
+                currentFooter = this;
+                return (
+                    this.state.content
+                );
+            }
+        }
+
+        function LoadTemplatesMenuHandler(e) {
+            let object = e.target.closest(".typeTemplateBlock");
+
+            if (object.classList.contains("headerTypeTemplateBlock")) {
+                currentLoadMenu.press("header");
+            }
+            else if (object.classList.contains("mainTypeTemplateBlock")) {
+                currentLoadMenu.press("main");
+            }
+            else if (object.classList.contains("footerTypeTemplateBlock")) {
+                currentLoadMenu.press("footer");
+            }
+        }
+
+        function TemplatesBlockComponent() {
+            return (
+                <div className="typesTemplates" id="typesTemplates">
+                    <div onClick={LoadTemplatesMenuHandler} className="typeTemplateBlock headerTypeTemplateBlock noselect">
+                        <img className="TypeTemplateImg" src="../img/headerTemplate.png" alt="" />
+                    </div>
+                    <div onClick={LoadTemplatesMenuHandler} className="typeTemplateBlock mainTypeTemplateBlock noselect">
+                        <img className="TypeTemplateImg" src="../img/mainTemplate.png" alt="" />
+                    </div>
+                    <div onClick={LoadTemplatesMenuHandler} className="typeTemplateBlock footerTypeTemplateBlock noselect">
+                        <img className="TypeTemplateImg" src="../img/footerTemplate.png" alt="" />
+                    </div>
+                </div>
+            )
+        }
+
+        class LoadTemplatesMenu extends React.Component {
+            constructor(props) {
+                super(props);
+                this.press = this.press.bind(this);
+                this.state = {content: <ChoseHeader />};
+            }
+            componentDidUpdate() {
+                let allWrappers = choseNode.getElementsByClassName('choseWrapper');
+
+                if (currentTemplateLoad && currentTemplateLoad === allWrappers[0].parentElement) {
+                    return;
+                }
+
+                currentTemplateLoad = allWrappers[0].parentElement;
+                debugger;
+
+                setTimeout( function() {
+                    for (let i = 0; i < allWrappers.length; i++) {
+                        allWrappers[i].style.height = allWrappers[i].offsetHeight + 'px';
+                        allWrappers[i].style.height = (allWrappers[i].style.height.slice(0, -2) * 0.5) + 'px';
+                    }
+                }, 10);
+            }
+
+            press(typeTemplate) {
+                if (typeTemplate === "header") {
+                    this.setState({content: <ChoseHeader />});
+                }
+                else if (typeTemplate === "main") {
+                    this.setState({content: <ChoseMain />});
+                }
+                else if (typeTemplate === "footer") {
+                    this.setState({content: <ChoseFooter />});
+                }
+            }
+            render() {
+                currentLoadMenu = this;
+                return (
+                    this.state.content
+                );
+            }
+        }
+
+        function deleteTemplateOver(e) {
+            let object = e.target.closest(".template");
+            if (e.relatedTarget) {
+                if (object == e.relatedTarget.closest(".template")) {
+                    return;
+                }
+
+                object.style.outline = "4px solid #E74C3C";
+
+                let previousObject = e.relatedTarget.closest(".template");
+                if (previousObject) {
+                    previousObject.style.outline = "";
+                }
+            }
+            else {
+                object.style.outline = "4px solid #E74C3C";
+            }
+        }
+
+        function deleteTemplateOut(e) {
+            if (e.relatedTarget) {
+                if (e.target.closest(".template") === e.relatedTarget.closest(".template")) {
+                    return;
+                }
+                e.target.closest(".template").style.outline = "";
+            }
+        }
+
+        function moveTemplateOver(e) {
+            let object = e.target.closest(".template");
+
+            if (object.parentElement.classList.contains("header") || object.parentElement.classList.contains("footer")
+                || object.parentElement.parentElement.classList.contains("header") || object.parentElement.parentElement.classList.contains("footer")) {
+                return;
+            }
+
+            if (e.relatedTarget) {
+                if (object == e.relatedTarget.closest(".template")) {
+                    return;
+                }
+
+                object.style.outline = "4px solid #3498DB";
+
+                let previousObject = e.relatedTarget.closest(".template");
+                if (previousObject) {
+                    previousObject.style.outline = "";
+                }
+            }
+            else {
+                object.style.outline = "4px solid #3498DB";
+            }
+        }
+
+        function moveTemplateOut(e) {
+            if (e.relatedTarget) {
+                if (e.target.closest(".template") === e.relatedTarget.closest(".template")) {
+                    return;
+                }
+                e.target.closest(".template").style.outline = "";
+            }
+        }
+
+        function handleDeleteClick(e) {
+            let object = e.target.closest(".template")
+            let parent = object.parentElement;
+            let mainTable = document.getElementsByClassName("mainTable")[0];
+
+            if (mainTable.classList.contains("from-storage")) {
+                parent.removeChild(object);
+            }
+            else {
+                if (parent.classList.contains("header")) {
+                    currentHeader.deleter();
+                }
+                else if (parent.classList.contains("main")) {
+                    parent.removeChild(object);
+                }
+                else if (parent.classList.contains("footer")) {
+                    currentFooter.deleter();
+                }
+            }
+        }
+
+        function RemoveTemplateHandler() {
+            let removeTemplateButton = document.getElementById("removeTemplateButton");
+            let dragTemplateButton = document.getElementById("dragTemplateButton");
+            let mainTable = document.getElementsByClassName("mainTable")[0];
+
+            if (removeMode) {
+                removeMode = false;
+                mainTable.removeEventListener("mouseover", deleteTemplateOver);
+                mainTable.removeEventListener("mouseout", deleteTemplateOut);
+                removeTemplateButton.classList.remove("pressed");
+
+                letterReact.removeEventListener("click", handleDeleteClick);
+            }
+            else {
+                if (dragTemplateButton.classList.contains("pressed")) {
+                    changeMoveMode();
+                }
+
+                removeMode = true;
+
+                mainTable.addEventListener("mouseover", deleteTemplateOver);
+                mainTable.addEventListener("mouseout", deleteTemplateOut);
+                removeTemplateButton.classList.add("pressed");
+
+                letterReact.addEventListener("click", handleDeleteClick);
+            }
+        }
+
+        // drag
+        function changeMoveMode() {
+            let mainTemplates = document.getElementById("main");
+            let dragElements = mainTemplates.querySelectorAll(".template");
+            let removeTemplateButton = document.getElementById("removeTemplateButton");
+            let dragTemplateButton = document.getElementById("dragTemplateButton");
+            let mainTable = document.getElementsByClassName("mainTable")[0];
+
+            if (moveMode) {
+                moveMode = false;
+                dragTemplateButton.classList.remove("pressed");
+
+                mainTable.removeEventListener("mouseover", moveTemplateOver);
+                mainTable.removeEventListener("mouseout", moveTemplateOut);
+
+                for (let i = 0; i < dragElements.length; i++) {
+                    dragElements[i].draggable = false;
+                }
+
+                mainTemplates.removeEventListener(`dragover`, handlerMoveTemplate);
+            }
+            else {
+                if (removeTemplateButton.classList.contains("pressed")) {
+                    RemoveTemplateHandler();
+                }
+
+                moveMode = true;
+                dragTemplateButton.classList.add("pressed");
+                mainTable.addEventListener("mouseover", moveTemplateOver);
+                mainTable.addEventListener("mouseout", moveTemplateOut);
+
+                for (let i = 0; i < dragElements.length; i++) {
+                    dragElements[i].draggable = true;
+                }
+
+
+
+                mainTemplates.addEventListener(`dragover`, handlerMoveTemplate);
+
+                mainTemplates.addEventListener(`dragstart`, e => {
+                    let object = e.target.closest(".template");
+
+                    if (object.draggable === true) {
+                        object.classList.add(`selected`);
+                    }
+
+                });
+
+                mainTemplates.addEventListener(`dragend`, e => {
+                    let object = e.target.closest(".template");
+
+                    object.classList.remove(`selected`);
+                });
+            }
+        }
+
+        let getNextElement = (cursorPosition, currentElement) => {
+            let currentElementCoord = currentElement.getBoundingClientRect();
+            let currentElementCenter = currentElementCoord.y + currentElementCoord.height / 2;
+
+            let nextElement = (cursorPosition < currentElementCenter) ?
+                currentElement :
+                currentElement.nextElementSibling;
+
+            return nextElement;
+        };
+
+        function handlerMoveTemplate(e) {
+            e.preventDefault();
+
+            let mainTemplates = document.getElementById("main");
+            let activeElement = mainTemplates.querySelector(`.selected`);
+
+            if (!activeElement) {
+                return;
+            }
+
+            let currentElement = e.target.closest(".template");
+
+
+            let isMoveable = activeElement !== currentElement;
+            if (!isMoveable) {
+                return;
+            }
+
+            let nextElement = getNextElement(e.clientY, currentElement);
+
+            if (!nextElement) {
+                nextElement = mainTemplates.lastChild;
+                nextElement.after(activeElement);
+            }
+            else {
+                nextElement.before(activeElement);
+            }
+        }
+
+        // Рендер только если в хранилище не сохранён html текущего письма
 
         changeTemplatesBlock.render(
             <div className="changeTemplatesBlockWrapper">
-                <button onClick={RemoveTemplateHandler} class="removeTemplateButton" id="removeTemplateButton" type="button">Удалить</button>
-                <button onClick={changeMoveMode} class="dragTemplateButton" id="dragTemplateButton" type="button">Переместить</button>
+                <button onClick={RemoveTemplateHandler} class="removeTemplateButton noselect" id="removeTemplateButton" type="button">Удалять</button>
+                <button onClick={changeMoveMode} class="dragTemplateButton noselect" id="dragTemplateButton" type="button">Передвигать</button>
             </div>
         );
 
-		if (MyLocalStorage.get_current_letter()['html']) {
+        if (MyLocalStorage.get_current_letter()['html']) {
             console.log("Upload current letter");
 
             let mainTable = document.getElementsByClassName("mainTable")[0];
             mainTable.outerHTML = MyLocalStorage.get_current_letter()['html'];
-		} else {
+        } else {
             console.log("Upload default letter");
             header.render(
                 <CurrentHeader />
@@ -796,10 +1360,9 @@
             chose.render(
                 <LoadTemplatesMenu/>
             );
-		}
-
-
+        }
 	</script>
+
 	<script src="../js/app.js"></script>
 	<script src="../js/my-script.js"></script>
 	<script src="../js/models/FixedWindow.js"></script>

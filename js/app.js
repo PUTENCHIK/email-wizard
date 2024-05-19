@@ -31,7 +31,11 @@ let letterSpacingInput = document.getElementById("letterSpacingInput");
 // Элементы настройки Fill блока
 let updateBackgroundColor = document.getElementById("updateBackgroundColor");
 let updateBackgroundTag = document.getElementById("updateBackgroundTag");
-let updateBackgroundColorBlock = document.getElementById("updateBackgroundColorBlock");
+
+// Элементы настройки align блока
+let updateBlockBlock = document.getElementById("updateBlockBlock");
+let updateBlockPaddingTopInput = document.getElementById("updateBlockPaddingTopInput");
+let updateBlockPaddingBotInput = document.getElementById("updateBlockPaddingBotInput");
 
 // Элементы настройки Weight текста
 let fontWeightBold = document.getElementById("fontWeightBold");
@@ -59,21 +63,22 @@ let moveMode = false;
 let mainTableBlock = document.getElementsByClassName("mainTable");
 let removeTemplate = document.getElementById("removeTemplateBlock");
 
+let textAlignmentLeftBlock = document.getElementsByClassName('textAlignmentLeftBlock')[0];
+let textAlignmentCenterBlock = document.getElementsByClassName('textAlignmentCenterBlock')[0];
+let textAlignmentRightBlock = document.getElementsByClassName('textAlignmentRightBlock')[0];
 
-function componentToHex(c) {
-    var hex = c.toString();
-    return hex.length === 1 ? "0" + hex : hex;
-}
-  
+
 function rgbToHex(rgbString) {
     const [r, g, b] = rgbString.match(/\d+/g).map(Number);
-    return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
+    return "#" + (1 << 24 | r << 16 | g << 8 | b).toString(16).slice(1);
 }
 
 function stopEditText() {
     editingText = false;
 
-    if (!mainInputText.value) {
+    let a = mainInputText.value;
+
+    if (!mainInputText.textContent) {
         currentObject.textContent = "...";
     }
     else {
@@ -95,7 +100,7 @@ function stopEditBlock() {
     editingBlock = false;
     currentObject.style.outline = '';
 
-    updateBackgroundColorBlock.classList.add("dissable");
+    updateBlockBlock.classList.add("dissable");
 }
 
 letter.addEventListener('click', e => {
@@ -119,7 +124,8 @@ letter.addEventListener('click', e => {
         currentObject = object;
 
         // Настраиваем input
-        mainInputText.value = object.textContent;
+        mainInputText.textContent = currentObject.textContent;
+        mainInputText.value = currentObject.textContent;
         mainInputText.classList = "";
 
         currentObject.classList.forEach(element => {
@@ -127,7 +133,14 @@ letter.addEventListener('click', e => {
         });
 
         mainInputText.classList.add("mainInputText");
-        mainInputText.setAttribute("style", "color:black");
+
+        let a = currentObject.offsetWidth;
+        let curWidth, curHeight;
+
+        curWidth = String(currentObject.offsetWidth + 10) + 'px';
+        curHeight = String(currentObject.offsetHeight + 10) + 'px';
+
+        mainInputText.setAttribute("style","display:block; width:" + curWidth + "; height: " + curHeight +  "; color:black");
         mainInputText.style.fontSize = currentObject.style.fontSize;
 
         if (object.parentElement.tagName === "A") {
@@ -140,9 +153,15 @@ letter.addEventListener('click', e => {
         mainInputText.focus();
         currentObject.classList.add("dissable");
 
+        debugger;
         // Настраиваем смену цвета
         if (currentObject.style.color) {
-            updateTextColor.value = rgbToHex(currentObject.style.color);
+            if (currentObject.style.color[0] === '#') {
+                updateTextColor.value = currentObject.style.color;
+            }
+            else {
+                updateTextColor.value = rgbToHex(currentObject.style.color);
+            }
         }
         else {
             updateTextColor.value = "#000000";
@@ -164,13 +183,30 @@ letter.addEventListener('click', e => {
         mainInputText.style.fontFamily = currentObject.style.fontFamily;
 
         // Настраиваем размер шрифта
-        fontSizeInput.value = currentObject.style.fontSize;
+        if (!currentObject.style.fontSize) {
+            fontSizeInput.value = "16";
+        }
+        else {
+            fontSizeInput.value = (currentObject.style.fontSize).slice(0, -2);
+        }
+        
 
         // Настраиваем межстрочный интервал
-        lineHeightInput.value = currentObject.style.lineHeight;
+        if (!currentObject.style.lineHeight) {
+            lineHeightInput.value = '120';
+        }
+        else {
+            lineHeightInput.value = currentObject.style.lineHeight.slice(0, -1);
+        }
+        
 
         // Настраиваем межбуквенный интервал
-        letterSpacingInput.value = currentObject.style.letterSpacing;
+        if (!currentObject.style.letterSpacing) {
+            letterSpacingInput.value = '0';
+        }
+        else {
+            letterSpacingInput.value = currentObject.style.letterSpacing.slice(0, -2);
+        }   
         
         //  Настраиваем жирность текста
         if (currentObject.style.fontWeight == "bold") {
@@ -227,7 +263,7 @@ letter.addEventListener('click', e => {
 
         updateImageBlock.classList.remove("dissable");
         let bufBorder = currentObject.style.border;
-        currentObject.style.outline = "4px solid red";
+        currentObject.style.outline = "4px dashed #A2D933";
 
         updateImageOpacityInput.value = updateImageOpacityInput.value;
         if (currentObject.style.opacity === "") {
@@ -237,8 +273,8 @@ letter.addEventListener('click', e => {
         updateImageOpacityInput.value = currentObject.style.opacity * 100 + "%";
         displayImageOpacity.style.opacity = currentObject.style.opacity;
         
-        updateImageWidthInput.value = currentObject.style.width;
-        updateImageHeightInput.value = currentObject.style.height;  
+        updateImageWidthInput.value = currentObject.offsetWidth;
+        updateImageHeightInput.value = currentObject.offsetHeight;  
 
         if (currentObject.src != "https://tatarstan-symphony.com/images/noimage.jpg") {
             path.value = currentObject.src;
@@ -256,8 +292,19 @@ letter.addEventListener('click', e => {
         }
         //updateImagePaddingLeftInput.value = parentTd.tagName;
 
-        updateImagePaddingLeftInput.value = parentTd.style.paddingLeft;
-        updateImagePaddingRightInput.value = parentTd.style.paddingRight;
+        if (parentTd.style.paddingLeft) {
+            updateImagePaddingLeftInput.value = parentTd.style.paddingLeft.slice(0, -2);
+        }
+        else {
+            updateImagePaddingLeftInput.value = '0';
+        }
+        if (parentTd.style.paddingRight) {
+            updateImagePaddingRightInput.value = parentTd.style.paddingRight.slice(0, -2);
+        }
+        else {
+            updateImagePaddingRightInput.value = '0';
+        }
+        
 
         path.addEventListener('change', e => {
             currentObject.src = path.value;
@@ -277,9 +324,9 @@ letter.addEventListener('click', e => {
         editingBlock = true;
 
         currentObject = object;
-        currentObject.style.outline = "4px solid red";
+        currentObject.style.outline = "4px dashed #A2D933";
 
-        updateBackgroundColorBlock.classList.remove("dissable");
+        updateBlockBlock.classList.remove("dissable");
 
         if (currentObject.getAttribute("bgcolor")) {
             if (currentObject.getAttribute("bgcolor")[0] === "#") {
@@ -293,6 +340,23 @@ letter.addEventListener('click', e => {
             updateBackgroundColor.value = "#ffffff";
         }
         updateBackgroundColorTag.value = updateBackgroundColor.value;
+
+
+        let parentTemplate = currentObject.closest('.template');
+        let firstTd = parentTemplate.getElementsByTagName('td');
+
+        if (firstTd[0].style.paddingTop) {
+            updateBlockPaddingTopInput.value = firstTd[0].style.paddingTop.slice(0, -2);
+        }
+        else {
+            updateBlockPaddingTopInput.value = '0';
+        }
+        if (firstTd[firstTd.length - 1].style.paddingBottom) {
+            updateBlockPaddingBotInput.value = firstTd[firstTd.length - 1].style.paddingBottom.slice(0, -2);
+        }
+        else {
+            updateBlockPaddingBotInput.value = '0';
+        }
     }
 });
 
@@ -309,6 +373,9 @@ document.addEventListener("click", e => {
 
     if (!choseMenu.classList.contains("dissable") && !templatesBlockBuff.contains(e.target) && !choseMenu.contains(e.target)) {
         choseMenu.classList.add("dissable");
+        if (currentTypeTemplate) {
+            currentTypeTemplate.classList.remove('menuNow');
+        }
     }
 }, {capture: true});
 
@@ -337,25 +404,29 @@ fontSizeInput.addEventListener("change", e => {
         mainInputText.style.fontSize = "46px";
     }
     else {
-        currentObject.style.fontSize = fontSizeInput.value;
-        mainInputText.style.fontSize = fontSizeInput.value;
-    } 
+        currentObject.style.fontSize = fontSizeInput.value + 'px';
+        mainInputText.style.fontSize = fontSizeInput.value + 'px';
 
+        currentObject.classList.remove("dissable");
+
+        let curWidth = String(currentObject.offsetWidth + 20) + 'px';
+        let curHeight = String(currentObject.offsetHeight + 10) + 'px';
+
+        currentObject.classList.add("dissable");
+
+        mainInputText.style.width = curWidth;
+        mainInputText.style.height = curHeight;
+    }
 });
 
 lineHeightInput.addEventListener("change", e => {
-    currentObject.style.lineHeight = lineHeightInput.value;
-    mainInputText.style.lineHeight = lineHeightInput.value;
-});
-
-lineHeightInput.addEventListener("change", e => {
-    currentObject.style.lineHeight = lineHeightInput.value;
-    mainInputText.style.lineHeight = lineHeightInput.value;
+    currentObject.style.lineHeight = lineHeightInput.value + '%';
+    mainInputText.style.lineHeight = lineHeightInput.value + '%';
 });
 
 letterSpacingInput.addEventListener("change", e => {
-    currentObject.style.letterSpacing= letterSpacingInput.value;
-    mainInputText.style.letterSpacing = letterSpacingInput.value;
+    currentObject.style.letterSpacing= letterSpacingInput.value + 'px';
+    mainInputText.style.letterSpacing = letterSpacingInput.value + 'px';
 });
 
 updateTextColor.addEventListener("change", e => {
@@ -413,20 +484,31 @@ textAlignmentLeft.addEventListener('change', e => {
     if (textAlignmentLeft.checked) {
         currentObject.style.textAlign = "left";
         mainInputText.style.textAlign = "left";
+        textAlignmentLeftBlock.style.backgroundColor = "#adadad";
+        textAlignmentCenterBlock.style.backgroundColor = "#D9D9D9";
+        textAlignmentRightBlock.style.backgroundColor = "#D9D9D9";
     }
 });
 
 textAlignmentCenter.addEventListener('change', e => {
+    let textAlignmentCenterBlock = document.getElementsByClassName('textAlignmentCenterBlock')[0];
     if (textAlignmentCenter.checked) {
         currentObject.style.textAlign = "center";
         mainInputText.style.textAlign = "center";
+        textAlignmentLeftBlock.style.backgroundColor = "#D9D9D9";
+        textAlignmentCenterBlock.style.backgroundColor = "#adadad";
+        textAlignmentRightBlock.style.backgroundColor = "#D9D9D9";
     }
 });
 
 textAlignmentRight.addEventListener('change', e => {
+    let textAlignmentRightBlock = document.getElementsByClassName('textAlignmentRightBlock')[0];
     if (textAlignmentRight.checked) {
         currentObject.style.textAlign = "right";
         mainInputText.style.textAlign = "right";
+        textAlignmentLeftBlock.style.backgroundColor = "#D9D9D9";
+        textAlignmentCenterBlock.style.backgroundColor = "#D9D9D9";
+        textAlignmentRightBlock.style.backgroundColor = "#adadad";
     }
 });
 
@@ -446,12 +528,24 @@ updateTextOpacityInput.addEventListener('change', e => {
 updateBackgroundColor.addEventListener("change", e => {
     currentObject.setAttribute("bgcolor", updateBackgroundColor.value);
     updateBackgroundColorTag.value = updateBackgroundColor.value;
+
+    let allTd = currentObject.getElementsByTagName('td');
+
+    for (let i = 0; i < allTd.length; i++) {
+        allTd[i].setAttribute("bgcolor", updateBackgroundColor.value);
+    }
 });
 
 updateBackgroundColorTag.addEventListener('change', e => {
-    if (updateTextColorTag.value[0] === '#') {
-        currentObject.bgcolor = updateBackgroundColorTag.value;
-        updateBackgroundColor.value = updateBackgroundColorTag.value;
+    if (updateBackgroundColorTag.value[0] === '#') {
+        currentObject.setAttribute("bgcolor", updateBackgroundColorTag.value.replace(/\s/g, ""));
+        updateBackgroundColor.value = updateBackgroundColorTag.value.replace(/\s/g, "");
+
+        let allTd = currentObject.getElementsByTagName('td');
+
+        for (let i = 0; i < allTd.length; i++) {
+            allTd[i].setAttribute("bgcolor", updateBackgroundColor.value);
+        }
     }
 });
 
@@ -461,29 +555,73 @@ updateImageOpacityInput.addEventListener('change', e => {
 });
 
 updateImageWidthInput.addEventListener('change', e => {
-    currentObject.style.width = updateImageWidthInput.value;
+    currentObject.style.width = updateImageWidthInput.value + 'px';
+    updateImageHeightInput.value = currentObject.offsetHeight;  
 });
 
 updateImageHeightInput.addEventListener('change', e => {
-    currentObject.style.height = updateImageHeightInput.value;
+    currentObject.style.height = updateImageHeightInput.value + 'px';
+    updateImageWidthInput.value = currentObject.offsetWidth;
 });
 
 updateImagePaddingLeftInput.addEventListener('change', e => {
-    parentTd.style.paddingLeft = updateImagePaddingLeftInput.value;
+    if (updateImagePaddingLeftInput.value > 100) {
+        parentTd.style.paddingLeft = '100px';
+    }
+    else {
+        parentTd.style.paddingLeft = updateImagePaddingLeftInput.value + 'px';
+    }
 });
 
 updateImagePaddingRightInput.addEventListener('change', e => {
-    parentTd.style.paddingRight = updateImagePaddingRightInput.value;
+
+    if (updateImagePaddingRightInput.value > 100) {
+        parentTd.style.paddingRight = '100px';
+    }
+    else {
+        parentTd.style.paddingRight = updateImagePaddingRightInput.value + 'px';
+    }
+});
+
+updateBlockPaddingTopInput.addEventListener('change', e => {
+    let parentTemplate = currentObject.closest('.template');
+    let firstTd = parentTemplate.getElementsByTagName('td')[0];
+
+    if (updateBlockPaddingTopInput.value > 100) {
+        firstTd.style.paddingTop = '100px';
+    }
+    else {
+        firstTd.style.paddingTop = updateBlockPaddingTopInput.value + 'px';
+    }
+});
+
+updateBlockPaddingBotInput.addEventListener('change', e => {
+    let parentTemplate = currentObject.closest('.template');
+    let firstTd = parentTemplate.getElementsByTagName('td');
+
+    if (updateBlockPaddingBotInput.value > 100) {
+        firstTd[firstTd.length - 1].style.paddingBottom = '100px';
+    }
+    else {
+        firstTd[firstTd.length - 1].style.paddingBottom = updateBlockPaddingBotInput.value + 'px';
+    }
 });
 
 
 templatesBlockBuff.addEventListener('click', e => {
     if (currentTypeTemplate === e.target.closest(".typeTemplateBlock")) {
         choseMenu.classList.toggle("dissable");
-        
+        currentTypeTemplate.classList.toggle('menuNow');
     }
     else {
-        currentTypeTemplate = e.target.closest(".typeTemplateBlock");
-        choseMenu.classList.remove("dissable");
+        if (currentTypeTemplate) {
+            currentTypeTemplate.classList.remove('menuNow');
+        }
+        
+        if (e.target.closest(".typeTemplateBlock")) {
+            currentTypeTemplate = e.target.closest(".typeTemplateBlock");
+            choseMenu.classList.remove("dissable");
+            currentTypeTemplate.classList.toggle('menuNow');
+        }
     }
 });

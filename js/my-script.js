@@ -9,6 +9,7 @@ window.addEventListener("DOMContentLoaded", () => {
     } catch {
         //
     }
+    EmailSender.uploadLetterTemplate();
 
     let btn_myemails = document.getElementsByClassName("button-myemails")[0];
 
