@@ -16,7 +16,7 @@ class EmailSender {
             scripts[i].remove();
         }
 
-        let letterHTML = RedactorReader.readLetterContent(true);
+        let letterHTML = RedactorReader.readLetterContent();
         // MyLocalStorage.set_html_current_letter(letterHTML);
         // let letterHTML = MyLocalStorage.get_current_letter()['html'];
 

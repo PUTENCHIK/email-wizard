@@ -16,10 +16,9 @@ class SaveEmailWindow extends FixedWindow {
 
         this.button_confirm = SaveEmailWindow.createButton("Да", "button-yes", false, true);
         this.button_confirm.addEventListener("click", () => {
-            let letter_html = RedactorReader.readLetterContent(true);
+            let letter_html = RedactorReader.readLetterContent();
             MyLocalStorage.set_html_current_letter(letter_html);
             this.closeWindow();
-            // window.location.href="../html/index.html";
         });
 
         this.window.append(this.info_block);

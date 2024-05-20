@@ -69,7 +69,11 @@
 						<td>
 							<table id="mainTable" class="mainTable table-600" cellpadding="0" cellspacing="0" width="600" align="center">
 								<tr class="header" id="header"></tr>
-								<tr class="main" id="main"></tr>
+								<tr>
+                                    <td>
+                                        <table class="main" id="main"></table>
+                                    </td>
+                                </tr>
 								<tr class="footer" id="footer"></tr>
 							</table>
 						</td>
@@ -232,407 +236,426 @@
 	<script type="text/babel">
         function Header1() {
             return (
-                <table style={{maxWidth: '600px'}} className="template header1" cellpadding={"0"} cellspacing={"0"} width={"600"} bgcolor={"#FFFFFF"} align={"center"}>
-                    <tr><td></td></tr>
-                    <tr>
-                        <td align={"center"} height={"75px"} bgcolor={"#333333"}>
-                            <img align={"center"} src={"https://i.pinimg.com/originals/d1/2b/cf/d12bcf726d8683c17229522b730ea061.png"} style={{width: "160px"}}/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td align={"center"} style={{paddingTop: "20px", paddingBottom: "20px"}} bgcolor={"#FFFFFF"}>
-                            <table cellpadding={"0"} cellspacing={"0"} width={"550"} bgcolor={"#FFFFFF"} align={"center"}>
-                                <tr align={"center"}>
-                                    <td className="menu">
-                                        <a href="#"><p style={{fontSize: "20px", fontFamily: "Arial, Helvetica, sans-serif"}}>Home</p></a>
-                                    </td>
-                                    <td className="menu">
-                                        <a href="#"><p style={{fontSize: "20px", fontFamily: "Arial, Helvetica, sans-serif"}}>Women</p></a>
-                                    </td>
-                                    <td className="menu">
-                                        <a href="#"><p style={{fontSize: "20px", fontFamily: "Arial, Helvetica, sans-serif"}}>Men</p></a>
-                                    </td>
-                                    <td className="menu">
-                                        <a href="#"><p style={{fontSize: "20px", fontFamily: "Arial, Helvetica, sans-serif"}}>Sale</p></a>
-                                    </td>
-                                </tr>
-                            </table>
-                        </td>
-                    </tr>
-                    <tr><td></td></tr>
-                </table>
+                <tr>
+                    <table style={{maxWidth: '600px'}} className="template header1" cellpadding={"0"} cellspacing={"0"} width={"600"} bgcolor={"#FFFFFF"} align={"center"}>
+                        <tr>
+                            <td align={"center"} height={"75px"} bgcolor={"#333333"}>
+                                <img align={"center"} src={"https://i.pinimg.com/originals/d1/2b/cf/d12bcf726d8683c17229522b730ea061.png"} style={{width: "160px"}}/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align={"center"} style={{paddingTop: "20px", paddingBottom: "20px"}} bgcolor={"#FFFFFF"}>
+                                <table cellpadding={"0"} cellspacing={"0"} width={"550"} bgcolor={"#FFFFFF"} align={"center"}>
+                                    <tr align={"center"}>
+                                        <td style={{paddingLeft: "30px"}}>
+                                            <a href="#"><p style={{fontSize: "20px", fontFamily: "Arial, Helvetica, sans-serif"}}>Home</p></a>
+                                        </td>
+                                        <td style={{paddingLeft: "30px"}}>
+                                            <a href="#"><p style={{fontSize: "20px", fontFamily: "Arial, Helvetica, sans-serif"}}>Women</p></a>
+                                        </td>
+                                        <td style={{paddingLeft: "30px"}}>
+                                            <a href="#"><p style={{fontSize: "20px", fontFamily: "Arial, Helvetica, sans-serif"}}>Men</p></a>
+                                        </td>
+                                        <td style={{paddingLeft: "30px"}}>
+                                            <a href="#"><p style={{fontSize: "20px", fontFamily: "Arial, Helvetica, sans-serif"}}>Sale</p></a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </tr>
             )
         }
 
         function Header2() {
             return (
-                <table className="template header2" cellpadding={"0"} cellspacing={"0"} width={"600"} bgcolor={"#FFFFFF"} align={"center"}>
-                    <tr><td></td></tr>
-                    <tr>
-                        <td bgcolor="#ffffff" class="header-td">
-                            <table class="table-550" cellpadding="0" cellspacing="0" width="550" bgcolor="#ffffff" align="center">
-                                <tr>
-                                    <td>
-                                        <table align="left" class="menu leftMenu" cellpadding="0" cellspacing="0">
-                                            <tr>
-                                                <td><a href="#"><p>Menu</p></a></td>
-                                                <td><a href="#"><p>Reservation</p></a></td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                    <td align="center">
-                                        <img style={{width: "150px"}} src="https://tlr.stripocdn.email/content/guids/CABINET_2ec97436767c2a3affe1ca04469ab056/images/211502462728809.png" alt="logo"/>
-                                    </td>
-                                    <td>
-                                        <table align="center" class="menu rightMenu" cellpadding="0" cellspacing="0">
-                                            <tr>
-                                                <td><a href="#"><p>Events</p></a></td>
-                                                <td><a href="#"><p>Contact</p></a></td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                </tr>
-                            </table>
-                        </td>
-                    </tr>
-                    <tr><td></td></tr>
-                </table>
+                <tr>
+                    <table className="template header2" cellpadding={"0"} cellspacing={"0"} width={"600"} bgcolor={"#FFFFFF"} align={"center"}>
+                        <tr>
+                            <td bgcolor="white" style={{paddingTop: "16px",paddingBottom: "16px"}}>
+                                <table cellpadding="0" cellspacing="0" width="550" bgcolor="white" align="center">
+                                    <tr>
+                                        <td>
+                                            <table align="left" style={{paddingLeft: "30px"}} cellpadding="0" cellspacing="0">
+                                                <tr>
+                                                    <td><a href="#"><p>Menu</p></a></td>
+                                                    <td><a href="#"><p>Reservation</p></a></td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td align="center">
+                                            <img style={{width: "150px"}} src="https://tlr.stripocdn.email/content/guids/CABINET_2ec97436767c2a3affe1ca04469ab056/images/211502462728809.png" alt="logo"/>
+                                        </td>
+                                        <td>
+                                            <table align="center" style={{paddingLeft: "30px"}} cellpadding="0" cellspacing="0">
+                                                <tr>
+                                                    <td><a href="#"><p>Events</p></a></td>
+                                                    <td><a href="#"><p>Contact</p></a></td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </tr>
             )
         }
 
         function Header3() {
             return (
-                <table className="table-600 template header3" cellpading="0" cellspacing="0" width="600" align="center">
-                    <tr><td></td></tr>
-                    <tr>
-                        <td align="left">
-                            <img src="https://1000logos.net/wp-content/uploads/2019/03/Dota-2-Logo.png" width="100" />
-                        </td>
-                        <td align="right" className="menu" style={{fontSize: "18px",fontWeight: "400",letterSpacing: "0.28px",textDecoration: "none"}}>
-                            <table cellpading="0" cellspacing="0">
-                                <tr>
-                                    <td><p href="#" style={{fontFamily: "Arial, Helvetica, sans-serif, 'Raleway"}}>All Pick</p></td>
-                                    <td><p href="#" style={{fontFamily: "Arial, Helvetica, sans-serif, 'Raleway"}}>Turbo</p></td>
-                                    <td><p href="#" style={{fontFamily: "Arial, Helvetica, sans-serif, 'Raleway"}}>Single Draft</p></td>
-                                </tr>
-                            </table>
-                        </td>
-                    </tr>
-                    <tr><td></td></tr>
-                </table>
+                <tr>
+                    <table className="table-600 template header3" cellpading="0" cellspacing="0" width="600" align="center">
+                        <tr>
+                            <td align="left">
+                                <img src="https://1000logos.net/wp-content/uploads/2019/03/Dota-2-Logo.png" width="100" />
+                            </td>
+                            <td align="right" style={{fontSize: "18px",fontWeight: "400",paddingLeft: "30px",letterSpacing: "0.28px",textDecoration: "none"}}>
+                                <table cellpading="0" cellspacing="0">
+                                    <tr>
+                                        <td><p href="#" style={{fontFamily: "Arial, Helvetica, sans-serif, 'Raleway"}}>All Pick</p></td>
+                                        <td><p href="#" style={{fontFamily: "Arial, Helvetica, sans-serif, 'Raleway"}}>Turbo</p></td>
+                                        <td><p href="#" style={{fontFamily: "Arial, Helvetica, sans-serif, 'Raleway"}}>Single Draft</p></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </tr>
             )
         }
 
         function Main1() {
             return (
-                <table className="template main1" cellpadding={"0"} cellspacing={"0"} width={"600"} bgcolor={"#FFFFFF"} align={"center"}>
-                    <tr><td style={{paddingTop: '20px'}}></td></tr>
-                    <tr>
-                        <td class="banner-td">
-                            <img style={{width: "600px"}} src="https://tlr.stripocdn.email/content/guids/CABINET_c7824bb36cccc4a18e117277e3e9d327/images/35121502780295222.jpg" alt="banner"/>
-                        </td>
-                    </tr>
-                    <tr><td></td></tr>
-                </table>
+                <tr>
+                    <table className="template main1" cellpadding={"0"} cellspacing={"0"} width={"600"} bgcolor={"#FFFFFF"} align={"center"}>
+                        <tr>
+                            <td class="banner-td">
+                                <a href="#">
+                                    <img style={{width: "600px"}} src="https://tlr.stripocdn.email/content/guids/CABINET_c7824bb36cccc4a18e117277e3e9d327/images/35121502780295222.jpg" alt="banner"/>
+                                </a>
+                            </td>
+                        </tr>
+                    </table>
+                </tr>
             )
         }
 
         function Main2() {
             return (
-                <table className="template main2" cellpadding={"0"} cellspacing={"0"} width={"600"} bgcolor={"#FFFFFF"} align={"center"}>
-                    <tr><td style={{paddingTop: '20px'}}></td></tr>
-                    <tr>
-                        <td bgcolor="#FFFFFF" align="center" className="greetings">
-                            <p style={{fontSize: "32px", fontFamily: "Arial, Helvetica, sans-serif;"}}>Hi Emeli,</p>
-                            <hr />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td bgcolor="#FFFFFF" align="center" className="thanks">
-                            <p style={{lineHeight: "150%", fontSize: "18px", fontFamily: "'Times New Roman', Times, serif"}}>Thanks for registering on our site.<br/>Before we get started, we'll need to verify your email.</p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td bgcolor="#FFFFFF" class="confirmButton">
-                            <table className="table-150" bgcolor="#ccad53" cellpadding="0" cellspacing="0" width="200" height="50" align="center">
-                                <tr>
-                                    <td className="confirm" align="center">
-                                        <p style={{color: "#ffffff", fontSize: "22px", fontFamily: "'Times New Roman', Times, serif"}}>Confirm my email</p>
-                                    </td>
-                                </tr>
-                            </table>
-                        </td>
-                    </tr>
-                    <tr><td></td></tr>
-                </table>
+                <tr>
+                    <table className="template main2" cellpadding={"0"} cellspacing={"0"} width={"600"} bgcolor={"#FFFFFF"} align={"center"}>
+                        <tr>
+                            <td bgcolor="#FFFFFF" align="center" style={{paddingTop: "40px",paddingBottom: "16px"}}>
+                                <p style={{fontSize: "32px", fontFamily: "Arial, Helvetica, sans-serif;"}}>Hi Emeli,</p>
+                                <hr style={{width: "80px",borderColor: "#ccad53",borderWidth: "2px",borderStyle: "solid"}}/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#FFFFFF" align="center" style={{paddingBottom: "24px"}}>
+                                <p style={{lineHeight: "150%", fontSize: "18px", fontFamily: "'Times New Roman', Times, serif"}}>Thanks for registering on our site.<br/>Before we get started, we'll need to verify your email.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#FFFFFF" style={{paddingBottom: "56px"}}>
+                                <table bgcolor="#ccad53" cellpadding="0" cellspacing="0" width="200" height="50" align="center">
+                                    <tr>
+                                        <td align="center">
+                                            <p style={{color: "#ffffff", fontSize: "22px", fontFamily: "'Times New Roman', Times, serif"}}>Confirm my email</p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </tr>
             )
         }
 
         function Main3() {
             return (
-                <table className="template main3" cellpadding={"0"} cellspacing={"0"} width={"600"} bgcolor={"#FFFFFF"} align={"center"}>
-                    <tr><td style={{paddingTop: '20px'}}></td></tr>
-                    <tr>
-                        <td align="left">
-                            <td style={{padding: '20px'}}>
-                                <p style={{fontSize: "14px", fontFamily: "Arial, Helvetica, sans-serif;"}}>Приятно, граждане, наблюдать, как реплицированные с зарубежных источников, современные исследования являются только методом политического участия и смешаны с не уникальными данными до степени совершенной неузнаваемости, из-за чего возрастает их статус бесполезности. Имеется спорная точка зрения, гласящая примерно следующее: активно развивающиеся страны третьего мира представляют собой не что иное, как квинтэссенцию победы маркетинга над разумом и должны быть объявлены нарушающими общечеловеческие нормы этики и морали.</p>
+                <tr>
+                    <table style={{overflowX: 'hidden'}} className="template main3" cellpadding={"0"} cellspacing={"0"} width={"600"} bgcolor={"#FFFFFF"} align={"center"}>
+                        <tr>
+                            <td align="left">
+                                <td style={{padding: '20px'}}>
+                                    <p style={{fontSize: "14px", fontFamily: "Arial, Helvetica, sans-serif;"}}>It is pleasant, citizens, to observe how modern research, replicated from foreign sources, is only a method of political participation and is mixed with non-unique data to the point of complete unrecognizability, which is why their status of uselessness increases. There is a controversial point of view that goes something like this: actively developing third world countries represent nothing more than the quintessence of the victory of marketing over reason and should be declared to violate universal human standards of ethics and morality.</p>
+                                </td>
                             </td>
-                        </td>
-                    </tr>
-                    <tr><td></td></tr>
-                </table>
+                        </tr>
+                    </table>
+                </tr>
+            )
+        }
+
+        function Main4() {
+            return (
+                <tr>
+                    <table className="template main4" cellpadding={"0"} cellspacing={"0"} width={"600"} bgcolor={"#FFFFFF"} align={"center"}>
+                        <tr>
+                            <td align="center" height="40px">
+
+                            </td>
+                        </tr>
+                    </table>
+                </tr>
             )
         }
 
         function Main5() {
             return (
-                <table  className="template main5" cellpadding={"0"} cellspacing={"0"} width={"600"} bgcolor={"#FFFFFF"} align={"center"}>
-                    <tr><td style={{paddingTop: '20px'}}></td></tr>
-                    <tr>
-                        <td align="left" >
-                            <table cellpadding={"0"} cellspacing={"0"} width={"600"} bgcolor={"#FFFFFF"} align={"center"}>
-                                <tr>
-                                    <td>
-                                        <img style={{minHeight: "500px", minWidth: "200px"}} src="https://fikiwiki.com/uploads/posts/2022-02/1645030221_18-fikiwiki-com-p-kartinki-krasivie-vertikalnie-20.jpg" alt="banner"/>
-                                    </td>
-                                    <td style={{paddingLeft: '30px'}}>
-                                        <p style={{fontSize: "14px", fontFamily: "Arial, Helvetica, sans-serif;"}}>Приятно, граждане, наблюдать, как реплицированные с зарубежных источников, современные исследования являются только методом политического участия и смешаны с не уникальными данными до степени совершенной неузнаваемости, из-за чего возрастает их статус бесполезности. Имеется спорная точка зрения, гласящая примерно следующее: активно развивающиеся страны третьего мира представляют собой не что иное, как квинтэссенцию победы маркетинга над разумом и должны быть объявлены нарушающими общечеловеческие нормы этики и морали.</p>
-                                    </td>
-                                </tr>
-                            </table>
+                <tr>
+                    <table style={{overflowX: 'hidden'}} className="template main5" cellpadding={"0"} cellspacing={"0"} width={"600"} bgcolor={"#FFFFFF"} align={"center"}>
+                        <tr>
+                            <td align="left">
+                                <table cellpadding={"0"} cellspacing={"0"} width={"600"} bgcolor={"#FFFFFF"} align={"center"}>
+                                    <tr>
+                                        <td>
+                                            <img style={{minHeight: "500px", minWidth: "200px"}} src="https://fikiwiki.com/uploads/posts/2022-02/1645030221_18-fikiwiki-com-p-kartinki-krasivie-vertikalnie-20.jpg" alt="banner"/>
+                                        </td>
+                                        <td style={{paddingLeft: '30px'}}>
+                                            <p style={{fontSize: "14px", fontFamily: "Arial, Helvetica, sans-serif;"}}>It is pleasant, citizens, to observe how modern research, replicated from foreign sources, is only a method of political participation and is mixed with non-unique data to the point of complete unrecognizability, which is why their status of uselessness increases. There is a controversial point of view that goes something like this: actively developing third world countries represent nothing more than the quintessence of the victory of marketing over reason and should be declared to violate universal human standards of ethics and morality</p>
+                                        </td>
+                                    </tr>
+                                </table>
 
-                        </td>
-                    </tr>
-                    <tr><td></td></tr>
-                </table>
+                            </td>
+                        </tr>
+
+                    </table>
+                </tr>
             )
         }
 
         function Main6() {
             return (
-                <table className="template main6" cellpadding={"0"} cellspacing={"0"} width={"600"} bgcolor={"#FFFFFF"} align={"center"}>
-                    <tr><td style={{paddingTop: '20px'}}></td></tr>
-                    <tr>
-                        <td align="center" width="100px" bgcolor="#FADFAD">
-                            <p style={{textOrientation: "upright",writingMode: "vertical-rl",fontSize: "38px",fontFamily: "Arial Black, Gadget, sans-serif"}}>Amazing</p>
-                        </td>
-                        <td align="center" width="400px">
-                            <img style={{width: "380px"}} src="https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_6527776a9523772f00ea671e_652778529bc67b6489d88566/scale_1200"/>
-                        </td>
-                        <td align="center" width="100px" bgcolor="#FADFAD">
-                            <p style={{textOrientation: "upright",writingMode: "vertical-rl",fontSize: "38px",fontFamily: "Arial Black, Gadget, sans-serif"}}>Pets</p>
-                        </td>
-                    </tr>
-                    <tr><td></td></tr>
-                </table>
+                <tr>
+                    <table className="template main6" cellpadding={"0"} cellspacing={"0"} width={"600"} bgcolor={"#FFFFFF"} align={"center"}>
+                        <tr>
+                            <td align="center" width="100px" bgcolor="#FADFAD">
+                                <p style={{textOrientation: "upright",writingMode: "vertical-rl",fontSize: "38px",fontFamily: "Arial Black, Gadget, sans-serif"}}>Amazing</p>
+                            </td>
+                            <td align="center" width="400px">
+                                <img style={{width: "380px"}} src="https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_6527776a9523772f00ea671e_652778529bc67b6489d88566/scale_1200"/>
+                            </td>
+                            <td align="center" width="100px" bgcolor="#FADFAD">
+                                <p style={{textOrientation: "upright",writingMode: "vertical-rl",fontSize: "38px",fontFamily: "Arial Black, Gadget, sans-serif"}}>Pets</p>
+                            </td>
+                        </tr>
+                    </table>
+                </tr> 
             )
         }
 
         function Main7() {
             return (
-                <table className="template main7" cellpadding={"0"} cellspacing={"0"} width={"600"} bgcolor={"#FFFFFF"} align={"center"}>
-                    <tr><td style={{paddingTop: '20px'}}></td></tr>
-                    <tr>
-                        <td align="left">
-                            <table cellpadding={"0"} cellspacing={"0"} width={"600"} bgcolor={"#FFFFFF"} align={"center"}>
-                                <tr>
-                                    <td style={{paddingRight: '30px'}}>
-                                        <p style={{fontSize: "14px", fontFamily: "Arial, Helvetica, sans-serif;"}}>Приятно, граждане, наблюдать, как реплицированные с зарубежных источников, современные исследования являются только методом политического участия и смешаны с не уникальными данными до степени совершенной неузнаваемости, из-за чего возрастает их статус бесполезности. Имеется спорная точка зрения, гласящая примерно следующее: активно развивающиеся страны третьего мира представляют собой не что иное, как квинтэссенцию победы маркетинга над разумом и должны быть объявлены нарушающими общечеловеческие нормы этики и морали.</p>
-                                    </td>
-                                    <td>
-                                        <img style={{minHeight: "500px", minWidth: "200px"}} src="https://fikiwiki.com/uploads/posts/2022-02/1645030221_18-fikiwiki-com-p-kartinki-krasivie-vertikalnie-20.jpg" alt="banner"/>
-                                    </td>
-                                </tr>
-                            </table>
+                <tr>
+                    <table style={{overflowX: 'hidden'}} className="template main7" cellpadding={"0"} cellspacing={"0"} width={"600"} bgcolor={"#FFFFFF"} align={"center"}>
+                        <tr>
+                            <td align="left">
+                                <table cellpadding={"0"} cellspacing={"0"} width={"600"} bgcolor={"#FFFFFF"} align={"center"}>
+                                    <tr>
+                                        <td style={{paddingRight: '30px'}}>
+                                            <p style={{fontSize: "14px", fontFamily: "Arial, Helvetica, sans-serif;"}}>Приятно, граждане, наблюдать, как реплицированные с зарубежных источников, современные исследования являются только методом политического участия и смешаны с не уникальными данными до степени совершенной неузнаваемости, из-за чего возрастает их статус бесполезности. Имеется спорная точка зрения, гласящая примерно следующее: активно развивающиеся страны третьего мира представляют собой не что иное, как квинтэссенцию победы маркетинга над разумом и должны быть объявлены нарушающими общечеловеческие нормы этики и морали.</p>
+                                        </td>
+                                        <td>
+                                            <img style={{minHeight: "500px", minWidth: "200px"}} src="https://fikiwiki.com/uploads/posts/2022-02/1645030221_18-fikiwiki-com-p-kartinki-krasivie-vertikalnie-20.jpg" alt="banner"/>
+                                        </td>
+                                    </tr>
+                                </table>
 
-                        </td>
-                    </tr>
-                    <tr><td></td></tr>
-                </table>
+                            </td>
+                        </tr>
+
+                    </table>
+                </tr>
             )
         }
 
         function Main8() {
             return (
-                <table className="template main8" cellpadding={"0"} cellspacing={"0"} width={"600"} bgcolor={"#FFFFFF"} align={"center"}>
-                    <tr><td style={{paddingTop: '20px'}}></td></tr>
-                    <tr>
-                        <td align="left">
-                            <table cellpadding={"0"} cellspacing={"0"} width={"600"} bgcolor={"#FFFFFF"} align={"center"}>
-                                <tr>
-                                    <td style={{paddingRight: '50px'}}>
-                                        <img style={{minHeight: "200px", minWidth: "150px"}} src="https://fikiwiki.com/uploads/posts/2022-02/1645030221_18-fikiwiki-com-p-kartinki-krasivie-vertikalnie-20.jpg" alt="banner"/>
-                                    </td>
-                                    <td style={{paddingRight: '50px'}}>
-                                        <img style={{minHeight: "200px", minWidth: "150px"}} src="https://fikiwiki.com/uploads/posts/2022-02/1645030221_18-fikiwiki-com-p-kartinki-krasivie-vertikalnie-20.jpg" alt="banner"/>
-                                    </td>
-                                    <td>
-                                        <img style={{minHeight: "200px", minWidth: "150px"}} src="https://fikiwiki.com/uploads/posts/2022-02/1645030221_18-fikiwiki-com-p-kartinki-krasivie-vertikalnie-20.jpg" alt="banner"/>
-                                    </td>
-                                </tr>
-                            </table>
+                <tr>
+                    <table style={{overflowX: 'hidden'}} className="template main8" cellpadding={"0"} cellspacing={"0"} width={"600"} bgcolor={"#FFFFFF"} align={"center"}>
+                        <tr>
+                            <td align="left">
+                                <table cellpadding={"0"} cellspacing={"0"} width={"600"} bgcolor={"#FFFFFF"} align={"center"}>
+                                    <tr>
+                                        <td style={{paddingRight: '50px'}}>
+                                            <img style={{minHeight: "200px", minWidth: "150px"}} src="https://fikiwiki.com/uploads/posts/2022-02/1645030221_18-fikiwiki-com-p-kartinki-krasivie-vertikalnie-20.jpg" alt="banner"/>
+                                        </td>
+                                        <td style={{paddingRight: '50px'}}>
+                                            <img style={{minHeight: "200px", minWidth: "150px"}} src="https://fikiwiki.com/uploads/posts/2022-02/1645030221_18-fikiwiki-com-p-kartinki-krasivie-vertikalnie-20.jpg" alt="banner"/>
+                                        </td>
+                                        <td>
+                                            <img style={{minHeight: "200px", minWidth: "150px"}} src="https://fikiwiki.com/uploads/posts/2022-02/1645030221_18-fikiwiki-com-p-kartinki-krasivie-vertikalnie-20.jpg" alt="banner"/>
+                                        </td>
+                                    </tr>
+                                </table>
 
-                        </td>
-                    </tr>
-                    <tr><td></td></tr>
-                </table>
+                            </td>
+                        </tr>
+
+                    </table>
+                </tr>
             )
         }
 
         function Main9() {
             return (
-                <table className="template main9" cellpadding={"0"} cellspacing={"0"} width={"600"} bgcolor={"#FFFFFF"} align={"center"}>
-                    <tr><td style={{paddingTop: '20px'}}></td></tr>
-                    <tr>
-                        <td align='center' width="30px" height="30px" bgcolor='#000000' >
-                            <p style={{color: '#ffffff'}}>1</p>
-                        </td>
-                        <td style={{paddingLeft: '20px'}}>
-                            <p style={{fontSize: '24px'}}>GREEN TEA "HEAVENLY TEARS"</p>
-                        </td>
-                    </tr>
-                    <tr><td></td></tr>
-                </table>
+                <tr>
+                    <table className="template main9" cellpadding={"0"} cellspacing={"0"} width={"600"} bgcolor={"#FFFFFF"} align={"center"}>
+                        <tr>
+                            <td align='center' width="30px" height="30px" bgcolor='#000000' >
+                                <p style={{color: '#ffffff'}}>1</p>
+                            </td>
+                            <td style={{paddingLeft: '20px'}}>
+                                <p style={{fontSize: '24px'}}>GREEN TEA "HEAVENLY TEARS"</p>
+                            </td>
+                        </tr>
+                    </table>
+                </tr>
             )
         }
 
         function Main10() {
             return (
-                <table className="template main10" cellpadding={"0"} cellspacing={"0"} width={"600"} bgcolor={"#FFFFFF"} align={"center"}>
-                    <tr><td style={{paddingTop: '20px'}}></td></tr>
-                    <tr>
-                        <td style={{paddingRight: '50px'}}>
-                            <img style={{minHeight: "150px", minWidth: "150px"}} src="https://tlr.stripocdn.email/content/guids/CABINET_f4bfb3d2f68f1f9808ca04e1386d274e/images/341504076871783.jpg" alt="banner"/>
-                        </td>
-                        <td>
-                            <table cellpadding={"0"} cellspacing={"0"} bgcolor={"#FFFFFF"} align={"center"}>
-                                <tr>
-                                    <td style={{paddingBottom: '20px'}}>
-                                        <p style={{fontSize: '24px'}}>Perfect on its own</p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <p style={{fontSize: '14px'}}>Each tear gracefully unfurls and dances in the water, gradually releasing a sublime and refined flavor. One of our most famous and highly prized teas. Ingredients: green tea, jasmine.</p>
-                                    </td>
-                                </tr>
-                            </table>
-                        </td>
-                    </tr>
-                    <tr><td></td></tr>
-                </table>
+                <tr>
+                    <table className="template main10" cellpadding={"0"} cellspacing={"0"} width={"600"} bgcolor={"#FFFFFF"} align={"center"}>
+                        <tr>
+                            <td style={{paddingRight: '50px'}}>
+                                <img style={{minHeight: "150px", minWidth: "150px"}} src="https://tlr.stripocdn.email/content/guids/CABINET_f4bfb3d2f68f1f9808ca04e1386d274e/images/341504076871783.jpg" alt="banner"/>
+                            </td>
+                            <td>
+                                <table cellpadding={"0"} cellspacing={"0"} bgcolor={"#FFFFFF"} align={"center"}>
+                                    <tr>
+                                        <td style={{paddingBottom: '20px'}}>
+                                            <p style={{fontSize: '24px'}}>Perfect on its own</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p style={{fontSize: '14px'}}>Each tear gracefully unfurls and dances in the water, gradually releasing a sublime and refined flavor. One of our most famous and highly prized teas. Ingredients: green tea, jasmine.</p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </tr>
             )
         }
 
         function Main11() {
             return (
-                <table className="table-600 template main11" cellpading="0" cellspacing="0" width="600" align="center">
-                    <tr><td></td></tr>
-                    <tr bgcolor="#ffffff">
-                        <td height="80" width="600"></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <table className="things" font cellpading="0" cellspacing="0" width="600" align="center" bgcolor="#ffffff">
-                                <tr valign="top">
-                                    <td>
-                                        <table cellpading="0" cellspacing="0" align="center">
-                                            <tr>
-                                                <td align="center">
-                                                    <img src="https://dota2.ru/img/items/iron_branch.jpg?1661172505"/>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td height="120" width="200" align="center">
-                                                    <p style={{fontFamily: 'Arial, Helvetica, sans-serif, Raleway'}}>Сажает в указанное место маленькое счастливое деревце, которое исчезнет через 20 секунд.</p>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                    <td>
-                                        <table cellpading="0" cellspacing="0" align="center">
-                                            <tr>
-                                                <td align="center">
-                                                    <img src="https://dota2.ru/img/items/enchanted_mango.jpg?1682262783"/>
-                                                </td>
-                                            </tr>
-                                            <tr height="120">
-                                                <td width="200" align="center">
-                                                    <p style={{fontFamily: 'Arial, Helvetica, sans-serif, Raleway'}}>Мгновенно восстанавливает 100 маны.</p>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                    <td>
-                                        <table cellpading="0" cellspacing="0" align="center">
-                                            <tr>
-                                                <td align="center">
-                                                    <img src="https://dota2.ru/img/items/tango.jpg?1691583989"/>
-                                                </td>
-                                            </tr>
-                                            <tr height="120">
-                                                <td width="200" align="center">
-                                                    <p style={{fontFamily: 'Arial, Helvetica, sans-serif, Raleway'}}>
-                                                        Съедает дерево, увеличивая восстановление здоровья на 7.
-                                                    </p>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td align="center">
-                                        <table cellpading="0" cellspacing="0" valign="top">
-                                            <tr>
-                                                <td align="center">
-                                                    <p> Читайте Дальше...</p>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                    <td align="center">
-                                        <table cellpading="0" cellspacing="0" valign="top">
-                                            <tr>
-                                                <td align="center">
-                                                    <p> Читайте Дальше...</p>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                    <td align="center">
-                                        <table cellpading="0" cellspacing="0" valign="top">
-                                            <tr>
-                                                <td align="center">
-                                                    <p> Читайте Дальше...</p>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                </tr>
-                            </table>
-                        </td>
-                    </tr>
-                    <tr><td></td></tr>
-                </table>
+                <tr>
+                    <table className="table-600 template main11" cellpading="0" cellspacing="0" width="600" align="center">
+                        <tr bgcolor="#ffffff">
+                            <td height="80" width="600"></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <table cellpading="0" cellspacing="0" width="600" align="center" bgcolor="#ffffff">
+                                    <tr valign="top">
+                                        <td>
+                                            <table cellpading="0" cellspacing="0" align="center">
+                                                <tr>
+                                                    <td align="center">
+                                                        <img src="https://dota2.ru/img/items/iron_branch.jpg?1661172505"/>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td height="120" width="200" align="center">
+                                                        <p style={{fontFamily: 'Arial, Helvetica, sans-serif, Raleway'}}>Сажает в указанное место маленькое счастливое деревце, которое исчезнет через 20 секунд.</p>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>
+                                            <table cellpading="0" cellspacing="0" align="center">
+                                                <tr>
+                                                    <td align="center">
+                                                        <img src="https://dota2.ru/img/items/enchanted_mango.jpg?1682262783"/>
+                                                    </td>
+                                                </tr>
+                                                <tr height="120">
+                                                    <td width="200" align="center">
+                                                        <p style={{fontFamily: 'Arial, Helvetica, sans-serif, Raleway'}}>Мгновенно восстанавливает 100 маны.</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>
+                                            <table cellpading="0" cellspacing="0" align="center">
+                                                <tr>
+                                                    <td align="center">
+                                                        <img src="https://dota2.ru/img/items/tango.jpg?1691583989"/>
+                                                    </td>
+                                                </tr>
+                                                <tr height="120">
+                                                    <td width="200" align="center">
+                                                        <p style={{fontFamily: 'Arial, Helvetica, sans-serif, Raleway'}}>
+                                                            Съедает дерево, увеличивая восстановление здоровья на 7.
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">
+                                            <table cellpading="0" cellspacing="0" valign="top">
+                                                <tr>
+                                                    <td align="center">
+                                                        <p> Читайте Дальше...</p>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td align="center">
+                                            <table cellpading="0" cellspacing="0" valign="top">
+                                                <tr>
+                                                    <td align="center">
+                                                        <p> Читайте Дальше...</p>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td align="center">
+                                            <table cellpading="0" cellspacing="0" valign="top">
+                                                <tr>
+                                                    <td align="center">
+                                                        <p> Читайте Дальше...</p>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </tr>
             )
         }
 
         function Main12() {
             return (
+                <tr>
                 <table className="table-600 template main12" cellpading="0" cellspacing="0" width="600" align="center">
-                    <tr><td></td></tr>
                     <tr>
                         <td>
-                            <table ClassName="things" cellpading="0" cellspacing="0" width="600" height="75" align="center" bgcolor="#ffffff"></table>
+                            <table cellpading="0" cellspacing="0" width="600" height="75" align="center" bgcolor="#ffffff"></table>
                         </td>
                     </tr>
-                    <tr style={{lineHeight }} className="genius">
+                    <tr>
                         <td>
-                            <table ClassName="things" cellpading="0" cellspacing="0" width="600" align="center" bgcolor="#ffffff">
+                            <table cellpading="0" cellspacing="0" width="600" align="center" bgcolor="#ffffff">
                                 <tr valign="top">
                                     <td>
                                         <table cellpading="0" cellspacing="0" align="center">
@@ -660,13 +683,13 @@
                                         <table cellpading="0" cellspacing="0" valign="top">
                                             <tr>
                                                 <td align="center">
-                                                    <img src="" height="50" style={{borderRadius: "30px"}}/>
+                                                    <img src="https://static.wikia.nocookie.net/dota2_gamepedia/images/4/40/Ursa_icon.png/revision/latest/scale-to-width-down/150?cb=20160411213321" height="50" style={{borderRadius: "30px"}}/>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td width="300" align="center">
                                                     <h3 style={{fontFamily: "Arial, Helvetica, sans-serif, Raleway"}}><p>Ursa</p></h3>
-                                                    <p ClassName="who" color="#D3D3D3" style={{fontFamily: "Arial, Helvetica, sans-serif, Raleway"}}>Персонаж Доты</p>
+                                                    <p color="#D3D3D3" style={{fontFamily: "Arial, Helvetica, sans-serif, Raleway"}}>Персонаж Доты</p>
                                                 </td>
                                             </tr>
                                         </table>
@@ -675,13 +698,13 @@
                                         <table cellpading="0" cellspacing="0" valign="top">
                                             <tr>
                                                 <td align="center">
-                                                    <img src="" height="50" style={{borderRadius: "30px"}}/>
+                                                    <img src="https://static.wikia.nocookie.net/dota2_gamepedia/images/0/00/Invoker_icon.png/revision/latest/scale-to-width-down/150?cb=20160411220849" height="50" style={{borderRadius: "30px"}}/>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td width="300" align="center">
                                                     <h3 style={{fontFamily: "Arial, Helvetica, sans-serif, Raleway"}}><p>Invoker</p></h3>
-                                                    <p ClassName="who" style={{fontFamily: "Arial, Helvetica, sans-serif, Raleway"}}>Персонаж Доты</p>
+                                                    <p style={{fontFamily: "Arial, Helvetica, sans-serif, Raleway"}}>Персонаж Доты</p>
                                                 </td>
                                             </tr>
                                         </table>
@@ -690,166 +713,356 @@
                             </table>
                         </td>
                     </tr>
-                    <tr><td></td></tr>
                 </table>
+                </tr>
             )
         }
 
-        function Main4() {
+        function Main13() {
             return (
-                <table className="template Main13" cellpadding="0" cellspacing="0" width="600" align="center">
-                    <tr><td style={{paddingTop: '20px'}}></td></tr>
-                    <tr>
-                        <td>
-                            <table>
-                                <tr>
-                                    <td className="things" cellpading="0" cellspacing="0" width="600" height="65" align="center">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td className="S" align="center">
-                                        <table className="header-td menu">
-                                            <tr className="S" width ="600" cellpading="0" align="center">
-                                                <td align="center" cellspacing="0" cellpading="25" style={{fontFamily: "Arial, Helvetica, sans-serif, Raleway", color: "#808080"}}>
-                                                    <table>
-                                                        <tr>
-                                                            <td><img src="https://janesstory.ru/upload/iblock/9b3/pgo3w2167iez3f6wriagbohm5r08gvsh.jpg" height="155"/></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td align="center" style={{color: "#000000"}}><p>Black Bag</p></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td align="center" style={{fontSize: "28px",fontFamily: "Arial Black, Gadget, sans-serif",lineHeight: "1.5"}}><p align="center">$90.00</p></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td bgcolor="#ED760E" width="170" align="center" style={{fontSize: "24px",fontFamily: "Arial Black, Gadget, sans-serif",lineHeight: "1.5",color: "#ffffff"}}><p align="center">Buy Now</p></td>
-                                                        </tr>
-                                                    </table>
-                                                </td>
-                                                <td align="center" cellspacing="0" cellpading="25" style={{fontFamily: "Arial, Helvetica, sans-serif, Raleway", color: "#808080"}}>
-                                                    <table>
-                                                        <tr>
-                                                            <td><img src="https://personal-gifts.ru/upload/iblock/2bc/2bc18b8eb126a0c42978754892725569.jpg" height="155"/></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td align="center" style={{color: "#000000"}}><p>Black Wallet</p></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td align="center" style={{fontSize: "28px",fontFamily: "Arial Black, Gadget, sans-serif",lineHeight: "1.5"}}><p align="center">$35.00</p></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td bgcolor="#ED760E" width="170" align="center" style={{fontSize: "24px",fontFamily: "Arial Black, Gadget, sans-serif",lineHeight: "1.5",color: "#ffffff"}}><p align="center">Buy Now</p></td>
-                                                        </tr>
-                                                    </table>
-                                                </td>
-                                                <td align="center" cellspacing="0" cellpading="25" style={{fontFamily: "Arial, Helvetica, sans-serif, Raleway", color: "#808080"}}>
-                                                    <table>
-                                                        <tr>
-                                                            <td><img src="https://main-cdn.sbermegamarket.ru/big1/hlr-system/-16/336/984/904/221/310/600006635671b0.jpg" height="155"/></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td align="center"  style={{color: "#000000"}}><p>Black Watch</p></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td align="center" style={{fontSize: "28px",fontFamily: "Arial Black, Gadget, sans-serif",lineHeight: "1.5"}}><p align="center">$55.00</p></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td bgcolor="#ED760E" width="170" align="center" style={{fontSize: "24px",fontFamily: "Arial Black, Gadget, sans-serif",lineHeight: "1.5",color: "#ffffff"}}><p align="center">Buy Now</p></td>
-                                                        </tr>
-                                                    </table>
-                                                </td>
+                <tr>
+                    <table className="template Main13" cellpadding="0" cellspacing="0" width="600" align="center">
+                        <tr>
+                            <td>
+                                <table>
+                                    <tr>
+                                        <td cellpading="0" cellspacing="0" width="600" height="65" align="center">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td  align="center">
+                                            <table className="header-td" style={{paddingLeft: "30px"}}>
+                                                <tr  width ="600" cellpading="0" align="center">
+                                                    <td align="center" cellspacing="0" cellpading="25" style={{fontFamily: "Arial, Helvetica, sans-serif, Raleway", color: "#808080"}}>
+                                                        <table>
+                                                            <tr>
+                                                                <td><img src="https://janesstory.ru/upload/iblock/9b3/pgo3w2167iez3f6wriagbohm5r08gvsh.jpg" height="155"/></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td align="center" style={{color: "#000000"}}><p>Black Bag</p></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td align="center" style={{fontSize: "28px",fontFamily: "Arial Black, Gadget, sans-serif",lineHeight: "1.5"}}><p align="center">$90.00</p></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td bgcolor="#ED760E" width="170" align="center" style={{fontSize: "24px",fontFamily: "Arial Black, Gadget, sans-serif",lineHeight: "1.5",color: "#ffffff"}}><p align="center">Buy Now</p></td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center" cellspacing="0" cellpading="25" style={{fontFamily: "Arial, Helvetica, sans-serif, Raleway", color: "#808080"}}>
+                                                        <table>
+                                                            <tr>
+                                                                <td><img src="https://personal-gifts.ru/upload/iblock/2bc/2bc18b8eb126a0c42978754892725569.jpg" height="155"/></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td align="center" style={{color: "#000000"}}><p>Black Wallet</p></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td align="center" style={{fontSize: "28px",fontFamily: "Arial Black, Gadget, sans-serif",lineHeight: "1.5"}}><p align="center">$35.00</p></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td bgcolor="#ED760E" width="170" align="center" style={{fontSize: "24px",fontFamily: "Arial Black, Gadget, sans-serif",lineHeight: "1.5",color: "#ffffff"}}><p align="center">Buy Now</p></td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center" cellspacing="0" cellpading="25" style={{fontFamily: "Arial, Helvetica, sans-serif, Raleway", color: "#808080"}}>
+                                                        <table>
+                                                            <tr>
+                                                                <td><img src="https://main-cdn.sbermegamarket.ru/big1/hlr-system/-16/336/984/904/221/310/600006635671b0.jpg" height="155"/></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td align="center"  style={{color: "#000000"}}><p>Black Watch</p></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td align="center" style={{fontSize: "28px",fontFamily: "Arial Black, Gadget, sans-serif",lineHeight: "1.5"}}><p align="center">$55.00</p></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td bgcolor="#ED760E" width="170" align="center" style={{fontSize: "24px",fontFamily: "Arial Black, Gadget, sans-serif",lineHeight: "1.5",color: "#ffffff"}}><p align="center">Buy Now</p></td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
 
-                                                <td align="center" cellspacing="70" style={{fontFamily: "Arial, Helvetica, sans-serif, Raleway", color: "#DCDCDC",paddingRight: "30px"}}>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <table className="things" cellpading="0" cellspacing="0" width="600" height="5" align="center"></table>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td className="things" cellpading="0" cellspacing="0" width="600" height="75" align="center">
-                                    </td>
-                                </tr>
-                            </table>
-                        </td>
-                    </tr>
-                    <tr><td></td></tr>
-                </table>
+                                                    <td align="center" cellspacing="70" style={{fontFamily: "Arial, Helvetica, sans-serif, Raleway", color: "#DCDCDC",paddingRight: "30px"}}>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <table cellpading="0" cellspacing="0" width="600" height="5" align="center"></table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td cellpading="0" cellspacing="0" width="600" height="75" align="center">
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </tr>
             )
         }
 
         function Footer1() {
             return (
-                <table className="template footer1" cellpadding={"0"} cellspacing={"0"} width={"600"} bgcolor={"#FFFFFF"} align={"center"}>
-                    <tr><td style={{paddingTop: '20px'}}></td></tr>
-                    <tr>
-                        <td bgcolor="#FFFFFF" align="center">
-                            <hr bgcolor="#cccccc" width="525"/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td align="center" bgcolor="#FFFFFF">
-                            <img style={{width: "110px", paddingTop: "16px", paddingBottom: "16px"}} src="https://tlr.stripocdn.email/content/guids/CABINET_2ec97436767c2a3affe1ca04469ab056/images/211502462728809.png" alt="logo"/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td align="center" bgcolor="#FFFFFF" className="why">
-                            <p style={{color: "#666666", fontSize: "13px", fontFamily: "'Times New Roman', Times, serif"}}>You are receiving this email because you have visited our site or asked us about regular newsletter.</p>
-                        </td>
-                    </tr>
-                    <tr><td></td></tr>
-                </table>
+                <tr>
+                    <table className="template footer1" cellpadding={"0"} cellspacing={"0"} width={"600"} bgcolor={"#FFFFFF"} align={"center"}>
+                        <tr>
+                            <td bgcolor="#FFFFFF" align="center">
+                                <hr bgcolor="#cccccc" width="525"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center" bgcolor="#FFFFFF">
+                                <img style={{width: "110px", paddingTop: "16px", paddingBottom: "16px"}} src="https://tlr.stripocdn.email/content/guids/CABINET_2ec97436767c2a3affe1ca04469ab056/images/211502462728809.png" alt="logo"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center" bgcolor="#FFFFFF" >
+                                <p style={{color: "#666666", fontSize: "13px", fontFamily: "'Times New Roman', Times, serif"}}>You are receiving this email because you have visited our site or asked us about regular newsletter.</p>
+                            </td>
+                        </tr>
+                    </table>
+                </tr>
             )
         }
 
         function Footer2() {
             return (
-                <table className="template Footer3" cellpadding="0" cellspacing="0" width="600" align="center">
-                    <tr><td style={{paddingTop: '20px'}}></td></tr>
-                    <tr>
-                        <td bgcolor="#333333">
-                            <table>
-                                <tr>
-                                    <td className="things" cellpading="0" cellspacing="0" width="600" height="65" align="center">
-                                    </td>
-                                </tr>
-                                <tr align="center">
-                                    <td><img src="https://dnahealthcorp.com/wp-content/uploads/2020/07/DNA-Logo-Grey-and-Green.png" height="105"/></td>
-                                </tr>
-                                <tr>
-                                    <td className="things" cellpading="0" cellspacing="0" width="600" height="45" align="center">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td className="S" align="center">
-                                        <table className="header-td menu">
-                                            <tr className="S" width ="400" cellpading="0" cellspacing="30" align="center">
-                                                <td align="center" style={{fontFamily: "Arial, Helvetica, sans-serif, Raleway", color: "#DCDCDC"}}><p>About us</p></td>
-                                                <td align="center" style={{fontFamily: "Arial, Helvetica, sans-serif, Raleway", color: "#DCDCDC"}}><p>Team</p></td>
-                                                <td align="center" style={{fontFamily: "Arial, Helvetica, sans-serif, Raleway", color: "#DCDCDC"}}><p>News</p></td>
-                                                <td align="center" style={{fontFamily: "Arial, Helvetica, sans-serif, Raleway", color: "#DCDCDC"}}><p>Contact us</p></td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <table className="things" cellpading="0" cellspacing="0" width="600" height="5" align="center"></table>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td className="things" cellpading="0" cellspacing="0" width="600" height="75" align="center">
-                                    </td>
-                                </tr>
-                            </table>
-                        </td>
-                    </tr>
-                    <tr><td></td></tr>
-                </table>
+                <tr>
+                    <table className="template Footer2" cellpadding="0" cellspacing="0" width="600" align="center">
+                        <tr>
+                            <td>
+                                <table cellpading="0" cellspacing="0" width="600" height="0" align="center" bgcolor="#ffffff"></table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <table className="table-600" cellpading="0" cellspacing="0" width="600" align="center" bgcolor="#30D5C8">
+                                    <tr>
+                                        <td>
+                                            <table cellpading="0" cellspacing="0" width="600" height="25" align="center"></table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <table cellpading="0" cellspacing="0" width="600" height="45" align="center"></table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">
+                                            <table className="header-td" width ="550">
+                                                <tr cellpading="0" cellspacing="0" align="center" valign="top">
+                                                    <td align="center">
+                                                        <table>
+                                                            <tr cellpading="0" cellspacing="0" align="left">
+                                                                <td align="left" style={{color: "#fffff", fontFamily: "Arial, Helvetica, sans-serif, Raleway"}}><p>Интернет поддержка</p></td>
+                                                            </tr>
+                                                            <tr cellpading="0" cellspacing="0" align="left">
+                                                                <td align="left" style={{fontFamily: "Arial, Helvetica, sans-serif, Raleway"}}> <p>Возможности</p></td>
+                                                            </tr>
+                                                            <tr cellpading="0" cellspacing="0" align="left">
+                                                                <td align="left" style={{fontFamily: "Arial, Helvetica, sans-serif, Raleway"}}><p>Возможности</p></td>
+                                                            </tr>
+                                                            <tr cellpading="0" cellspacing="0" align="left">
+                                                                <td align="left" style={{fontFamily: "Arial, Helvetica, sans-serif, Raleway"}}><p>Сверхгениальная возможность</p></td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center">
+                                                        <table>
+                                                            <tr cellpading="0" cellspacing="0" align="left">
+                                                                <td align="center" style={{color: "#fffff", fontFamily: "Arial, Helvetica, sans-serif, Raleway"}}><p>Поддержка</p></td>
+                                                            </tr>
+                                                            <tr cellpading="0"  cellspacing="0" align="left">
+                                                                <td align="center"  style={{fontFamily: "Arial, Helvetica, sans-serif, Raleway"}}><p> Возможности</p></td>
+                                                            </tr>
+                                                            <tr cellpading="0"  cellspacing="0" align="left">
+                                                                <td align="center"  style={{fontFamily: "Arial, Helvetica, sans-serif, Raleway"}}><p>Возможности</p></td>
+                                                            </tr>
+                                                            <tr cellpading="0"  cellspacing="0" align="left">
+                                                                <td align="center"  style={{fontFamily: "Arial, Helvetica, sans-serif, Raleway"}}><p>Сверхгениальная возможность</p></td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center">
+                                                        <table>
+                                                            <tr cellpading="0" cellspacing="0" align="left">
+                                                                <td align="center" style={{fontFamily: "Arial, Helvetica, sans-serif, Raleway"}}><p>Кампания</p></td>
+                                                            </tr>
+                                                            <tr cellpading="0"  cellspacing="0" align="left">
+                                                                <td align="center" style={{fontFamily: "Arial, Helvetica, sans-serif, Raleway"}}> <p>Возможности</p></td>
+                                                            </tr>
+                                                            <tr cellpading="0"  cellspacing="0" align="left">
+                                                                <td align="center"  style={{fontFamily: "Arial, Helvetica, sans-serif, Raleway"}}><p>Возможности</p></td>
+                                                            </tr>
+                                                            <tr cellpading="0"  cellspacing="0" align="left">
+                                                                <td align="center"  style={{fontFamily: "Arial, Helvetica, sans-serif, Raleway"}}><p>Сверхгениальная возможность</p></td>                                         </tr>
+                                                        </table>
+                                                    </td>
+
+                                                    <td align="center">
+                                                        <table>
+                                                            <tr cellpading="0" cellspacing="0" align="left">
+                                                                <td align="center" style={{color: "#fffff", fontFamily: "Arial, Helvetica, sans-serif, Raleway"}}><p>Сообщество</p></td>
+                                                            </tr>
+                                                            <tr cellpading="0"  cellspacing="0" align="left">
+                                                                <td align="center" style={{fontFamily: "Arial, Helvetica, sans-serif, Raleway"}}> <p>Телеграмм</p></td>
+                                                            </tr>
+                                                            <tr cellpading="0"  cellspacing="0" align="left">
+                                                                <td align="center" style={{fontFamily: "Arial, Helvetica, sans-serif, Raleway"}}><p>Вк</p></td>
+                                                            </tr>
+                                                            <tr cellpading="0"  cellspacing="0" align="left">
+                                                                <td align="center" style={{fontFamily: "Arial, Helvetica, sans-serif, Raleway"}}><p>Одноклассники</p></td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                                <tr height="30">
+                                                </tr>
+                                                <tr>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td><img align="right" src="https://vinyl-market.ru/images/shop_items/432-3.jpg.webp" height="35"/></td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <table cellpading="0" cellspacing="0" width="602 " height="55" align="center" bgcolor="#30D5C8"></table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <table className="table-600" cellpading="0" cellspacing="0" width="594" align="center" bgcolor="black">
+                                    <tr>
+                                        <td>
+                                            <table cellpading="0" cellspacing="0" width="600" height="15" align="center"></table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">
+                                            <table className="header-td" width ="550" cellpading="0" cellspacing="0" align="center">
+
+                                                <tr valign="top">
+                                                    <td>
+                                                        <table cellpading="0" cellspacing="0" width="550">
+                                                            <tr cellpading="0" cellspacing="0" width="550" align="center">
+                                                                <td align="left">
+                                                                    <table cellpading="0" cellspacing="0">
+                                                                        <tr>
+                                                                            <td align="left" bgcolor="darkgray"><img src="https://cdn-icons-png.flaticon.com/512/3081/3081797.png" width="50" height="35"/></td>
+                                                                            <td align="left" style={{color: "white", fontSize: "16px"}}><p>@2024 Шелби </p></td>
+
+                                                                        </tr>
+                                                                    </table>
+                                                                </td>
+                                                                <td align="center">
+                                                                    <table cellpading="0" cellspacing="0" style={{borderSpacing: "20px",borderCollapse: "separate"}}>
+                                                                        <tr>
+                                                                            <td align="center"><img src="https://w7.pngwing.com/pngs/110/123/png-transparent-iphone-ipad-android-google-play-now-button-electronics-text-logo.png" width="120" height="35"/></td>
+                                                                            <td align="center"><img src="https://i-invdn-com.investing.com/landingPages/mobile_2018/ru/ru-badge-ios.png" width="120" height="55"/></td>
+
+                                                                        </tr>
+                                                                    </table>
+                                                                </td>
+                                                                <td align="center">
+                                                                    <table cellpading="0" cellspacing="0" style={{borderSpacing: "20px",borderCollapse: "separate"}}>
+                                                                        <tr>
+                                                                            <td align="center"><img src="https://cdn-icons-png.flaticon.com/128/8728/8728153.png" width="50" height="35"/></td>
+
+                                                                        </tr>
+                                                                    </table>
+                                                                </td>
+                                                                <td align="right">
+                                                                    <table cellpading="0" cellspacing="0" style={{borderSpacing: "20px",borderCollapse: "separate"}}>
+                                                                        <tr>
+                                                                            <td align="right"><img src="https://cdn-icons-png.flaticon.com/512/145/145812.png" width="50" height="35"/></td>
+                                                                            <td align="right"><img src="https://cdn-icons-png.flaticon.com/512/5968/5968835.png" width="50" height="35"/></td>
+                                                                            <td style={{borderSpacing: "20px",borderCollapse: "separate"}} align="right"><img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" width="50" height="35"/></td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <table cellpading="0" cellspacing="0" width="600" height="15" align="center" bgcolor="black"></table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </tr>
+            )
+        }
+
+        function Footer3() {
+            return (
+                <tr>
+                    <table className="template Footer3" cellpadding="0" cellspacing="0" width="600" align="center">
+                        <tr>
+                            <td bgcolor="#333333">
+                                <table>
+                                    <tr>
+                                        <td cellpading="0" cellspacing="0" width="600" height="65" align="center">
+                                        </td>
+                                    </tr>
+                                    <tr align="center">
+                                        <td><img src="https://vinyl-market.ru/images/shop_items/432-3.jpg.webp" height="105"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td cellpading="0" cellspacing="0" width="600" height="45" align="center">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td  align="center">
+                                            <table className="header-td" style={{paddingLeft: "30px"}}>
+                                                <tr  width ="400" cellpading="0" cellspacing="30" align="center">
+                                                    <td align="center" style={{fontFamily: "Arial, Helvetica, sans-serif, Raleway", color: "#DCDCDC"}}><p>About us</p></td>
+                                                    <td align="center" style={{fontFamily: "Arial, Helvetica, sans-serif, Raleway", color: "#DCDCDC"}}><p>Team</p></td>
+                                                    <td align="center" style={{fontFamily: "Arial, Helvetica, sans-serif, Raleway", color: "#DCDCDC"}}><p>News</p></td>
+                                                    <td align="center" style={{fontFamily: "Arial, Helvetica, sans-serif, Raleway", color: "#DCDCDC"}}><p>Contact us</p></td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <table cellpading="0" cellspacing="0" width="600" height="5" align="center"></table>
+                                        </td>
+                                    </tr>
+                                    <tr align="center">
+                                        <td>
+                                            <table style={{paddingLeft: "30px"}}>
+                                                <tr>
+                                                    <td><p  href="#" style={{fontFamily: "Arial, Helvetica, sans-serif, Raleway", color: "#DCDCDC"}}><p>@2024 Сайт был сделан кланом Шелби</p></p></td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td cellpading="0" cellspacing="0" width="600" height="75" align="center">
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </tr>
             )
         }
 
@@ -1181,7 +1394,7 @@
         }
 
         function handleDeleteClick(e) {
-            let object = e.target.closest(".template")
+            let object = e.target.closest(".template").parentElement;
             let parent = object.parentElement;
             let mainTable = document.getElementsByClassName("mainTable")[0];
 
@@ -1272,7 +1485,7 @@
                     let object = e.target.closest(".template");
 
                     if (object.draggable === true) {
-                        object.classList.add(`selected`);
+                        object.parentElement.classList.add(`selected`);
                     }
 
                 });
@@ -1280,7 +1493,7 @@
                 mainTemplates.addEventListener(`dragend`, e => {
                     let object = e.target.closest(".template");
 
-                    object.classList.remove(`selected`);
+                    object.parentElement.classList.remove(`selected`);
                 });
             }
         }
@@ -1306,8 +1519,7 @@
                 return;
             }
 
-            let currentElement = e.target.closest(".template");
-
+            let currentElement = e.target.closest(".template").parentElement;
 
             let isMoveable = activeElement !== currentElement;
             if (!isMoveable) {
@@ -1315,6 +1527,7 @@
             }
 
             let nextElement = getNextElement(e.clientY, currentElement);
+
 
             if (!nextElement) {
                 nextElement = mainTemplates.lastChild;
