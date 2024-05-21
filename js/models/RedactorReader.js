@@ -37,9 +37,7 @@ class RedactorReader {
 
     static readLetterContent() {
         let templates = document.getElementsByClassName("mainTable")[0].getElementsByClassName("template");
-        // console.log(templates);
         let table = RedactorReader.createMainTable();
-        // console.log("own table:", table);
 
         let blocks = ["header", "main", "footer"];
         for (let i = 0; i < templates.length; i++) {
@@ -73,8 +71,6 @@ class RedactorReader {
         }
         table.classList.add("from-storage");
 
-        console.log(table);
-        console.log(table.outerHTML);
         return table.outerHTML;
     }
 }
