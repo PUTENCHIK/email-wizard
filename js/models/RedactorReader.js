@@ -35,36 +35,35 @@ class RedactorReader {
         return table;
     }
 
-    static readLetterContent(withTagP = false) {
+    static readLetterContent() {
         let templates = document.getElementsByClassName("mainTable")[0].getElementsByClassName("template");
-        console.log(templates);
+        // console.log(templates);
         let table = RedactorReader.createMainTable();
-        console.log("own table:", table);
+        // console.log("own table:", table);
 
         let blocks = ["header", "main", "footer"];
         for (let i = 0; i < templates.length; i++) {
             for (let j = 0; j < blocks.length; j++) {
                 if (templates[i].className.includes(blocks[j])) {
-                    console.log(templates[i], " ----> ", blocks[j]);
-
                     let block = table.getElementsByClassName(blocks[j])[0];
-                    console.log(block);
-
-                    let template;
 
                     if (templates[i].className.includes("main")) {
-                        template = templates[i].parentElement.cloneNode(true);
+                        let td = document.createElement("td");
+                        let tr = document.createElement("tr");
+                        td.append(templates[i].cloneNode(true));
+                        tr.append(td);
+
+                        block.append(tr);
                     }
                     else {
-                        template = templates[i].cloneNode(true);
-                    }
+                        let td = document.createElement("td");
+                        td.append(templates[i].cloneNode(true));
 
-                    console.log(template);
-                    block.append(template);
+                        block.append(td);
+                    }
                     break;
                 }
             }
-            console.log("=====================");
         }
         for (let j = 0; j < blocks.length; j++) {
             let block = table.getElementsByClassName(blocks[j])[0]

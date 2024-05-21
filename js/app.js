@@ -153,7 +153,6 @@ letter.addEventListener('click', e => {
         mainInputText.focus();
         currentObject.classList.add("dissable");
 
-        debugger;
         // Настраиваем смену цвета
         if (currentObject.style.color) {
             if (currentObject.style.color[0] === '#') {
